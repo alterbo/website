@@ -1,0 +1,38 @@
+{% extends 'layouts/base/base.njk' %}
+
+{% block nav %}
+    <div class="flex justify-between p-4">
+        {% include 'layouts/components/home-button.njk' %}
+        {% include 'layouts/components/menu-button.njk' %}
+    </div>
+{% endblock %}
+
+{% block main %}
+    <article>
+        {% if imageName !== undefined %}
+            <picture>
+                <source 
+                    srcset="{{ imageWH }}"
+                    media="(min-width: 600px)"
+                />
+                <img 
+                    src="{{ imageHW }}" 
+                    alt="{{ imageName }}"
+                />
+            </picture>
+        {% endif %}
+        <h1 class="font-serif text-4xl p-4">
+            {{ title }}
+        </h1>
+        <section class="m-4">
+            {{ content | safe }}
+        </section>
+        <footer class="p-4">
+            <p class="font-serif">
+                {{ 'Created on' if locale == 'en' else 'Creado el' }}
+                <time datetime="{{ date }}">{{ date | asPostDate(locale) }}</time>
+                {{ 'by' if locale === 'en' else 'por' }} Alberto Ferrero.
+            </p>
+        </footer>
+    </article>
+{% endblock %}

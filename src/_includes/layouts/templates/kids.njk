@@ -1,0 +1,16 @@
+{% extends 'layouts/base/base.njk' %}
+
+{% block nav %}
+    {% include 'layouts/components/home-button.njk' %}
+    {% include 'layouts/base/settings.njk' %}
+{% endblock %}
+
+{% block main %}
+    <main class="p-7 pt-3">
+        <h1 class="font-serif mb-3 text-slate-400">Menu</h1>
+        <div class="mb-5 text-l text-slate-700">
+            {{ content | safe}}
+        </div>
+        {% include 'layouts/base/collection.njk' %}
+    </main>
+{% endblock %}

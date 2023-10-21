@@ -1,0 +1,28 @@
+{
+    "locales": [
+        {
+            "category": "locale",
+            "name": "english version",
+            "url": "/en",
+            "value": "en",
+            "vector": ""
+        },
+        {
+            "category": "locale",
+            "name": "spanish version",
+            "url": "/es",
+            "value": "es",
+            "vector": ""
+        }
+    ],
+    "ages": [
+        {
+            "url": "/items",
+            "value": "items"
+        },
+        {
+            "url": "/kids",
+            "value": "kids"
+        }
+    ]
+}

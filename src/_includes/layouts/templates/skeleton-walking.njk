@@ -1,0 +1,60 @@
+<style>
+    #zoomContainer {
+        display: grid;
+        place-items: center;
+    }
+    .walking-left g {
+        animation-name: rotateAnimLeft;
+        animation-iteration-count: 7;
+        animation-direction: alternate reverse;
+    }
+    .walking-right g {
+        animation-name: rotateAnimRight;
+        animation-iteration-count: 7;
+        animation-direction: alternate;
+    }
+    [class^=walking] g {
+        fill: white;
+    }
+    .leg-container {
+        max-height: 460px;
+    }
+
+    @keyframes rotateAnimLeft {
+        0% { transform: rotate(25deg) translateY(0); }
+        10% { transform: rotate(-25deg) translateY(-10px); }
+        20% { transform: rotate(25deg) translateY(0); }
+        40% { transform: rotate(-25deg) translateY(-10px); }
+        60% { transform: rotate(25deg) translateY(0); }
+        80% { transform: rotate(-25deg) translateY(-10px); }
+        100% { transform: rotate(25deg) translateY(0); }
+    }
+    @keyframes rotateAnimRight {
+        0% { transform: rotate(-25deg) translateY(-10px); }
+        10% { transform: rotate(25deg) translateY(0); }
+        20% { transform: rotate(-25deg) translateY(-10px); }
+        40% { transform: rotate(25deg) translateY(0); }
+        60% { transform: rotate(-25deg) translateY(-10px); }
+        80% { transform: rotate(25deg) translateY(0); }
+        100% { transform: rotate(-25deg) translateY(-10px); }
+    }
+</style>
+<div id="zoomContainer" class="relative h-full overflow-hidden w-full">
+    <svg stroke-width="5" class="absolute h-full leg-container w-full" id="leftSkeletonWalkingContainer" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 3796.06 6410.27">
+    </svg>
+    <svg stroke-width="7" class="absolute h-full leg-container w-full" id="rightSkeletonWalkingContainer" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 3796.06 6410.27">
+        <g class="relative">
+            <path fill="white" stroke="black" d="m255.38 2041.14 1387.38-365.28 1686.2 268.62-1270 429.79-1803.58-333.13Z"/>
+            <path fill="white" stroke="black" d="m255.38 2041.14 1387.38-365.28 1686.2 268.62-1270 429.79-1803.58-333.13Z"/>
+            <path fill="white" stroke="black" d="m1642.76 1675.86 32.02-1450.539 1664.81 96.695.04 1611.724-1696.87-257.88Z"/>
+            <path fill="white" stroke="black" d="m1642.76 1675.86 32.02-1450.539 1664.81 96.695.04 1611.724-1696.87-257.88ZM1029.16 2045.1l310.38-62.12 569.13 72.47-331.06 113.82-548.45-124.17ZM1256.84 1827.81l1252.02 227.64M2788.24 1983.02 1598.3 1755.38"/>
+        </g>
+    </svg>
+</div>
+
+{% set skeletonwalking %}
+    {% include "js/skeleton-walking.js" %}
+{% endset %}
+<script>
+    {{ skeletonwalking | jsmin | safe }}
+</script>

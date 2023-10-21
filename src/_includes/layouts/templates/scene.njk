@@ -1,0 +1,51 @@
+{% extends 'layouts/base/base.njk' %}
+
+{% set scenecss %}
+  {% include "css/scene-items.css" %}
+{% endset %}
+
+{% block nav %}
+    <div class="flex fixed items-center justify-between p-4 top-0 w-full" id="nav">
+        <h1 class=" font-serif text-xl">{{ title }}</h1>
+        {% include 'layouts/components/close-button.njk' %}
+    </div>
+{% endblock %}
+
+{% block main %}
+    <style>
+        {{ scenecss | cssmin | safe }}
+    </style>
+
+    <scene-viewer
+        class="flex flex-col h-full items-center justify-end pb-24 px-3 relative overflow-hidden top-0 w-auto"
+        animation="{{ animation }}"
+    >
+        {{ content | safe }}
+    </scene-viewer>
+    <div id="controls" length="{{ length }}" class="bottom-0 fixed flex justify-between pb-3 px-3 w-full">
+        <a id="prev-button" class="border border-slate-400 font-bold font-serif m-2 p-3 text-xl"><</a>
+        <a id="next-button" class="border border-slate-400 font-bold font-serif m-2 p-3 text-xl">></a>
+    </div>
+
+    {% set scenesliderjs %}
+        {% include "js/scene-slider.js" %}
+    {% endset %}
+    <script>
+        {{ scenesliderjs | jsmin | safe }}
+    </script>
+
+    {% set sceneviewerjs %}
+        {% include "js/scene-viewer.js" %}
+    {% endset %}
+    <script>
+        {{ sceneviewerjs | jsmin | safe }}
+    </script>
+
+{% endblock %}
+
+{% set togglenavjs %}
+    {% include "js/toggle-nav.js" %}
+{% endset %}
+<script>
+    {{ togglenavjs | jsmin | safe }}
+</script>

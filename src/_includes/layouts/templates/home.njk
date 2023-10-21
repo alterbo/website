@@ -1,0 +1,13 @@
+{% extends 'layouts/base/base.njk' %}
+
+{% block nav %}
+    <div class="grid place-items-end">
+        {% include 'layouts/components/menu-button.njk' %}
+    </div>
+{% endblock %}
+
+{% block main %}
+    <main class="flex flex-1 flex-col h-full">
+        {% include 'layouts/templates/skeleton-walking.njk'%}
+    </main>
+{% endblock %}

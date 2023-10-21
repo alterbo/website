@@ -1,0 +1,23 @@
+@keyframes wiggle {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+  100% { transform: rotate(0); }
+}
+
+@keyframes wiggle2 {
+  0% { transform: translate(-10px, 0); }
+  25% { transform: translate(10px, 0); }
+  50% { transform: translate(-10px, 0); }
+  75% { transform: translate(10px, 0); }
+  100% { transform: translate(-10px, 0); }
+}
+
+.outer {
+  animation: wiggle 2s infinite;
+}
+
+.inner {
+  animation: wiggle2 2s infinite;
+}

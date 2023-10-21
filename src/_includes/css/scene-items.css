@@ -1,0 +1,31 @@
+.background,
+.foreground {
+    position: absolute;
+    z-index: -1;
+}
+
+p {
+    background-color: #fff;
+    padding: 0.725rem;
+}
+
+svg {
+    top: 0;
+}
+
+[animation=right] .foreground {
+    animation: right 7s linear infinite;
+}
+[animation=down] .foreground {
+    animation: down 20s linear 1;
+}
+
+@keyframes right {
+    0%, 100% { transform: translateX(0px); }
+    25% { transform: translateX(20px); }
+    75% { transform: translateX(-20px); }
+}
+@keyframes down {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(0px); }
+}
