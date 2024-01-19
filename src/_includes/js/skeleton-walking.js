@@ -57,12 +57,12 @@ renderLegParts(legParts, document.getElementById('leftSkeletonWalkingContainer')
 renderLegParts(legParts, document.getElementById('rightSkeletonWalkingContainer'));
 
 function swipe() {
-    const container = document.getElementById('zoomContainer');
+    const container = document.getElementById('homeContainer');
     const leftTargetElement = document.getElementById('leftSkeletonWalkingContainer');
     const rightTargetElement = document.getElementById('rightSkeletonWalkingContainer');
 
     container.addEventListener('touchstart', (event) => {
-        container.classList.toggle('zoom-container');
+        container.classList.toggle('home-container');
         leftTargetElement.classList.toggle('walking-left');
         rightTargetElement.classList.toggle('walking-right');
     });

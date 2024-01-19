@@ -1,5 +1,7 @@
 {% extends 'layouts/base/base.njk' %}
 
+{% from 'layouts/components/macros.njk' import itemFooter, itemTitle %}
+
 {% block nav %}
     <div class="flex justify-between p-4" id="nav">
         {% include 'layouts/components/home-button.njk' %}
@@ -8,26 +10,22 @@
 {% endblock %}
 
 {% block main %}
-    <article class="flex flex-1 flex-col justify-between p-3">
+    <article>
         {% if imageName !== undefined %}
             
         {% endif %}
-        <h1 class="font-serif text-4xl p-4">
-            {{ title }}
-        </h1>
-        <section class="flex flex-1 h-full items-center justify-center m-4">
-            {{ content | safe }}
-            <a class="border border-slate-400 m-3 ml-auto p-3 text-center text-xl" id="startButton" href="./1"/>
-                {{ 'Go' if locale === 'en' else 'Entrar' }}
-            </a>
+        {{ itemTitle(title) }}
+        <section class="border-2 border-double border-slate-200 grid grid-flow-row h-full items-center justify-center m-4">
+            <div class="h-[30vh]">
+                {{ content | safe }}
+            </div>
+            <div class="flex justify-center p-7">
+                <a class="border border-slate-400 m-3 p-3 text-center text-xl" id="startButton" href="./1"/>
+                    {{ 'Go' if locale === 'en' else 'Entrar' }}
+                </a>
+            </div>
         </section>
-        <footer class="p-4">
-            <p class="font-serif">
-                {{ 'Created on' if locale == 'en' else 'Creado el' }}
-                <time datetime="{{ date }}">{{ date | asPostDate(locale) }}</time>
-                {{ 'by' if locale === 'en' else 'por' }} Alberto Ferrero.
-            </p>
-        </footer>
+        {{ itemFooter(date, locale) }}
     </article>
 {% endblock %}
 

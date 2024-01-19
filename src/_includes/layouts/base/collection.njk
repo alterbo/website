@@ -8,26 +8,19 @@
   {{ css | cssmin | safe }}
 </style>
 
-{% for item in items | reverse %}
-  {% if loop.first %}<ul>{% endif %}
-    {% if item.data.title %}
-      <li class="mb-3">
-        <article class="mb-7">
-          <h3 class="inline-block mt-3 text-3xl">
-            <a class="font-serif link" href="#" params-handler="{{ item.url }}">{{ item.data.title }}</a>
-            <svg class="link-line mirror stroke-slate-200" viewBox="0 0 100 3" xmlns="http://www.w3.org/2000/svg">
-              <line x1="0" y1="0" x2="100" y2="3" />
-            </svg>
-          </h3>
-          <p class="mt-2">{{ item.data.category }}</p>
-          <p>
-            <time datetime="{{ item.date }}">{{ item.date | asPostDate(locale) }}</time>
-          </p>
-        </article>
-      </li>
-    {% endif %}
-  {% if loop.last %}</ul>{% endif %}
-{% endfor %}
+{% from 'layouts/components/macros.njk' import collectionArticle %}
+
+<div class="flex justify-center">
+  {% for item in items | reverse %}
+    {% if loop.first %}<ul class="w-full">{% endif %}
+      {% if item.data.title %}
+        <li class="mb-10">
+          {{ collectionArticle(item.data.category, item.date, locale, item.data.title, item.data.thumb, item.url) }}
+        </li>
+      {% endif %}
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+</div>
 
 {% set js %}
     {% include "js/collection-params.js" %}

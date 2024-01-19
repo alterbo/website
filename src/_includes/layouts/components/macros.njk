@@ -1,0 +1,47 @@
+{% macro collectionArticle(category, date, locale, title, thumb, url) %}
+    <article class="grid grid-rows-lol md:gap-10 md:grid-cols-lol md:grid-rows-nonlol mb-10 md:mb-7">
+        <div class="border-2 border-double border-slate-200 flex justify-center p-4 w-full">
+            <div class="relative w-full">
+                <picture>
+                    <source
+                        type="image/webp"
+                        srcset="./../../{{ thumb.url }}.webp"
+                    >
+                    <source
+                        type="image/jpeg"
+                        srcset="./../../{{ thumb.url }}.jpg"
+                    >
+                    <img
+                        class="absolute h-full left-1/2 transform -translate-x-1/2"
+                        alt="{{ thumb.text }}"
+                        src="./../../{{ thumb.url }}.jpg"
+                    >
+                </picture>
+            </div>
+        </div>
+        <div>
+            <h2 class="border-b-2 border-slate-200 hover:border-slate-400 inline-block mb-1 mt-3 pb-1 text-3xl">
+                <a class="font-serif link" href="#" params-handler="{{ url }}">{{ title }}</a>
+            </h2>
+            <p class="my-2">{{ category }}, <time datetime="{{ date }}">{{ date | asPostDate(locale) }}</time></p>
+        </div>
+    </article>
+{% endmacro %}
+
+{% macro itemFooter(date, locale) %}
+    <footer class="p-4 max-w-screen-xl mx-auto my-10">
+        <div class="border-2 border-double border-slate-200 p-4">
+            <p class="font-serif">
+                {{ 'Created on' if locale == 'en' else 'Creado el' }}
+                <time datetime="{{ date }}">{{ date | asPostDate(locale) }}</time>
+                {{ 'by' if locale === 'en' else 'por' }} Alberto Ferrero.
+            </p>
+        </div>
+    </footer>
+{% endmacro %}
+
+{% macro itemTitle(title) %}
+    <h1 class="font-serif max-w-screen-xl mx-auto text-3xl md:text-7xl px-4 pb-3 md:pb-10 pt-10">
+        {{ title }}
+    </h1>
+{% endmacro %}

@@ -4,4 +4,4 @@ layout: layouts/templates/kids.njk
 locale: en
 ---
 
-Welcome to The Kids Menu, also known as The Items for kids, a nice place.
+Welcome to the children's menu, but that doesn't mean you're going to be eaten as part of the menu. Don't worry.

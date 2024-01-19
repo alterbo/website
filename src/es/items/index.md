@@ -4,4 +4,6 @@ layout: layouts/templates/items.njk
 locale: es
 ---
 
-hola que pasa items
+Bienvenido al Menú, un sitio tranquilo.
+
+Aquí encontrarás todo, o nada, o el menú.

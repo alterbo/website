@@ -1,5 +1,12 @@
 {% extends 'layouts/base/base.njk' %}
 
+{% if locale === 'es' %}
+    {% set title = 'Sitio de Alberto Ferrero' %}
+{% endif %}
+{% if locale === 'en' %}
+    {% set title = 'Site of Alberto Ferrero' %}
+{% endif %}
+
 {% block nav %}
     <div class="grid place-items-end">
         {% include 'layouts/components/menu-button.njk' %}
@@ -7,7 +14,7 @@
 {% endblock %}
 
 {% block main %}
-    <main class="flex flex-1 flex-col h-full">
+    <div class="absolute grid h-full left-0 place-items-end top-0 w-full -z-10">
         {% include 'layouts/templates/skeleton-walking.njk'%}
-    </main>
+    </div>
 {% endblock %}
