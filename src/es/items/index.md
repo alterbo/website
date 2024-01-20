@@ -5,5 +5,4 @@ locale: es
 ---
 
 Bienvenido al Menú, un sitio tranquilo.
-
 Aquí encontrarás todo, o nada, o el menú.

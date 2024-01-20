@@ -13,10 +13,19 @@
 {% endblock %}
 
 {% block main %}
-    <div class="p-3 md:p-6">
-        <h1 class="font-serif mb-3 text-slate-400">Menu</h1>
-        <div class="font-serif mb-10 text-xl text-slate-700">
-            {{ content | safe}}
+   <div class="p-3 md:p-6 mb-10">
+        <div class="max-w-screen-xl mx-auto">
+            <h1 class="font-serif mb-3 text-4xl text-slate-400">
+                {% if locale === 'en' %}
+                    Menu
+                {% endif %}
+                {% if locale === 'es' %}
+                    Menú
+                {% endif %}
+            </h1>
+            <div class="mb-10 text-l text-slate-700">
+                {{ content | safe}}
+            </div>
         </div>
         {% include 'layouts/base/collection.njk' %}
     </div>
