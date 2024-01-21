@@ -12,7 +12,7 @@ class CustomRadioButton extends HTMLElement {
 
             .radio-button {
                 position: relative;
-                padding-left: 24px;
+                padding-left: 28px;
                 cursor: pointer;
             }
 
@@ -29,6 +29,7 @@ class CustomRadioButton extends HTMLElement {
                 height: 16px;
                 width: 16px;
                 background-color: #eee;
+                border: 2px solid transparent;
                 border-radius: 50%;
             }
 
@@ -47,10 +48,15 @@ class CustomRadioButton extends HTMLElement {
             .radio-button__input:checked ~ .radio-button__checkmark:after {
                 display: block;
             }
+
+            .radio-button__input:focus + .radio-button__checkmark {
+                border: 2px solid #000;
+                outline: none;
+            }
         </style>
 
         <label class="radio-button">
-            <input class="radio-button__input" type="radio">
+            <input class="radio-button__input" type="radio" role="radio" aria-checked="false">
             <span class="radio-button__checkmark"></span>
             <slot></slot>
         </label>
@@ -58,17 +64,24 @@ class CustomRadioButton extends HTMLElement {
 
         this.input = this.shadowRoot.querySelector('.radio-button__input');
         this.input.addEventListener('change', this.handleChange.bind(this));
+        this.input.addEventListener('focus', this.handleFocus.bind(this));
+        this.input.addEventListener('blur', this.handleBlur.bind(this));
     }
 
     connectedCallback() {
         if (this.hasAttribute('checked')) {
             this.input.checked = true;
+            this.input.setAttribute('aria-checked', 'true');
         }
 
         const name = this.getAttribute('name');
         if (name) {
             this.input.setAttribute('name', name);
         }
+    }
+
+    handleBlur() {
+        this.input.setAttribute('aria-focused', 'false');
     }
 
     handleChange() {
@@ -78,8 +91,11 @@ class CustomRadioButton extends HTMLElement {
         radioGroup.forEach((radio) => {
             if (radio !== this) {
                 radio.input.checked = false;
+                radio.input.setAttribute('aria-checked', 'false');
             }
         });
+
+        this.input.setAttribute('aria-checked', 'true');
     
         this.dispatchEvent(new CustomEvent('change', {
             bubbles: true,
@@ -87,6 +103,10 @@ class CustomRadioButton extends HTMLElement {
                 value: value,
             },
         }));
+    }
+
+    handleFocus() {
+        this.input.setAttribute('aria-focused', 'true');
     }
     
     get value() {

@@ -3,6 +3,10 @@ const { DateTime } = require('luxon');
 const { minify } = require('terser');
 
 module.exports = function(eleventyConfig) {
+    const files = [
+        'src/assets/favicon.ico',
+    ];
+    files.forEach((file) => eleventyConfig.addPassthroughCopy(file));
     eleventyConfig.addCollection('en_items', (collection) => collection.getFilteredByGlob('./src/en/items/**/index.md'));
     eleventyConfig.addCollection('es_items', (collection) => collection.getFilteredByGlob('./src/es/items/**/index.md'));
     eleventyConfig.addCollection('en_kids', (collection) => collection.getFilteredByGlob('./src/en/kids/**/index.md'));

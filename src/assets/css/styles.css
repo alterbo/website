@@ -20,6 +20,31 @@ p + p {
     margin-top: 1rem;
 }
 
+article ul {
+    margin: 1rem 0;
+}
+
+article ul li:before {
+    content: "▪";
+    color: rgba(0,0,0,0.2);
+    padding-right: 12px;
+    font-size: larger;
+}
+
+fieldset > legend {
+    white-space: nowrap;
+}
+
+.brutton:active {
+    background-color: rgba(0,0,0,0.2);
+    color: rgba(255,255,255,0.8);
+}
+
+.brutton:focus {
+    border-color: #000;
+    outline: none;
+}
+
 .font-serif {
     font-family: 'Bodoni Moda', serif;
 }

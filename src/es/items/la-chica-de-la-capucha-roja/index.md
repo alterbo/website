@@ -15,7 +15,9 @@ title: La chica de la capucha roja
 ---
 
 Por la noche suelo bajar a fumar cerca de la entrada a la m30, al otro lado del río. Hay un par de bancos siempre vacíos, tres arbolitos siempre vacíos y ningún coche
+
 Una noche ahí echando humo se detuvo frente a mi una chica en una moto. La chica de la capucha roja frenó su moto y me preguntó si ésa era la calle del río, o cómo podía llegar a un sitio. Yo miré hacia el final de la calle y extendí mi brazo hacia allá mostrándole que ahí, en ese punto, tenía que girar a la derecha. Pero la chica no estaba mirando al punto, me miraba a los ojos, fijamente, no a mi brazo extendido, no a mi dedo señalador, me mantenía la mirada
+
 Moví el brazo, todavía extendido, incluso saqué no uno sino dos dedos señaladores. Pero la chica seguía mirándome a los ojos
 
 Qué quería esa chica sonriente? pensé, evidentemente no quería una señalización, me quería a mí. No era que esa mañana yo me hubiese peinado ni nada por el estilo, la chica me quería a mi

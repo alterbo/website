@@ -8,7 +8,9 @@
 {% endif %}
 
 {% block nav %}
-    {% include 'layouts/components/home-button.njk' %}
+    <div class="flex justify-between p-4">
+        {% include 'layouts/components/home-button.njk' %}
+    </div>
     {% include 'layouts/base/settings.njk' %}
 {% endblock %}
 

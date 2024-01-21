@@ -1,5 +1,3 @@
-// custom-checkbox.js
-
 class CustomCheckbox extends HTMLElement {
   constructor() {
     super();
@@ -11,12 +9,6 @@ class CustomCheckbox extends HTMLElement {
           align-items: center;
           cursor: pointer;
           user-select: none;
-        }
-
-        .custom-checkbox input {
-          position: absolute;
-          opacity: 0;
-          cursor: pointer;
         }
 
         .custom-checkbox .checkbox-container {
@@ -54,14 +46,24 @@ class CustomCheckbox extends HTMLElement {
           transform: rotate(45deg);
         }
 
-        .custom-checkbox input:checked ~ .checkbox-checkmark:after {
+        .custom-checkbox input[type="checkbox"] {
+          position: absolute;
+          left: -9999px;
+        }
+
+        .custom-checkbox input[type="checkbox"]:checked + .checkbox-container .checkbox-checkmark:after {
           display: block;
+        }
+
+        .custom-checkbox input:focus + .checkbox-container .checkbox-checkmark {
+          border: 2px solid #000;
+          outline: none;
         }
       </style>
       
       <label class="custom-checkbox">
+        <input type="checkbox">
         <span class="checkbox-container">
-          <input type="checkbox">
           <span class="checkbox-checkmark"></span>
         </span>
         <span class="checkbox-label"></span>
@@ -71,31 +73,46 @@ class CustomCheckbox extends HTMLElement {
     this.attachShadow({ mode: "open" }).appendChild(template.content.cloneNode(true));
     this.labelElement = this.shadowRoot.querySelector(".checkbox-label");
     this.checkboxElement = this.shadowRoot.querySelector("input[type='checkbox']");
-  }
+}
 
   connectedCallback() {
-    this.addEventListener("click", () => {
-      this.checkboxElement.checked = !this.checkboxElement.checked;
+    if (this.hasAttribute('checked')) {
+      this.checkboxElement.checked = true;
+    }
+
+    if (this.hasAttribute('label')) {
+      this.labelElement.textContent = this.getAttribute('label');
+    }
+
+    if (this.hasAttribute('name')) {
+      this.checkboxElement.setAttribute('name', this.getAttribute('name'));
+    }
+
+    this.checkboxElement.addEventListener('change', () => {
       this.dispatchEvent(new Event("change", { bubbles: true }));
     });
   }
 
   static get observedAttributes() {
-    return ["label"];
+    return ['label', 'name', 'checked'];
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "label") {
+  attributeChangedCallback(name, _oldValue, newValue) {
+    if (name === 'label') {
       this.labelElement.textContent = newValue;
+    } else if (name === 'name') {
+      this.checkboxElement.setAttribute('name', newValue);
+    } else if (name === "checked") {
+      this.checkboxElement.checked = newValue !== null;
     }
   }
 
   get label() {
-    return this.getAttribute("label") || "";
+    return this.getAttribute('label') || '';
   }
 
   set label(value) {
-    this.setAttribute("label", value);
+    this.setAttribute('label', value);
   }
 
   get checked() {
@@ -103,8 +120,20 @@ class CustomCheckbox extends HTMLElement {
   }
 
   set checked(value) {
-    this.checkboxElement.checked = value;
+    if (value) {
+      this.setAttribute('checked', '');
+    } else {
+      this.removeAttribute('checked');
+    }
+  }
+
+  get name() {
+    return this.getAttribute('name');
+  }
+
+  set name(value) {
+    this.setAttribute('name', value);
   }
 }
 
-window.customElements.define("custom-checkbox", CustomCheckbox);
+window.customElements.define('custom-checkbox', CustomCheckbox);

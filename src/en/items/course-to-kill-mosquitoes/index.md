@@ -21,9 +21,11 @@ I can be zen and move on, sleep less, fight more, but the issue is that mosquito
 
 Solutions found on Google:
 
-Insect repellent for bugs
-Mosquito nets on the windows of our castle
-Online course on killing mosquitoes
-Anti-mosquito air freshener
-Hermetic isolation
+* Insect repellent for bugs
+* Mosquito nets on the windows of our castle
+* Online course on killing mosquitoes
+* Anti-mosquito air freshener
+* Hermetic isolation
+
+
 I have enrolled in the online course for killing mosquitoes, there are still spots available, in case you're interested.
