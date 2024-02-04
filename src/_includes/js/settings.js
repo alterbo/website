@@ -25,9 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const updateFormAction = () => {
         const settingsForm = document.getElementById('settingsForm');
-        if (settingsForm) {
-            settingsForm.setAttribute('action', `/${locale}/${age}/${category}/?locale=${locale}&kids=${age === 'kids' ? 'on' : 'off'}&category=${category}`);
-        }
+        settingsForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const navURL = `/${locale}/${age}/${category}/?locale=${locale}&kids=${age}&category=${category}`;
+            window.location.href = navURL;
+        });
     }
 
     const updateCategoryLabels = () => {
