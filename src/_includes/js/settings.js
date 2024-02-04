@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const updateFormAction = () => {
         const settingsForm = document.getElementById('settingsForm');
         if (settingsForm) {
-            settingsForm.setAttribute('action', `/${locale}/${age}/${category}/?locale=${locale}&kids=${age === 'kids' ? 'on' : 'off'}&category=${category}`);
+            settingsForm.setAttribute('action', `/${locale}/${age}/${category}/index.html?locale=${locale}&kids=${age === 'kids' ? 'on' : 'off'}&category=${category}`);
         }
     }
 
