@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "postcss src/assets/css/styles.css -o dist/assets/css/styles.css",
-    "start": "npm run build && eleventy --serve",
+    "build:css": "postcss src/assets/css/styles.css -o dist/assets/css/styles.css",
+    "build": "npm run build:css && eleventy",
+    "serve": "npm run build && eleventy --serve",
+    "watch:css": "postcss src/assets/css/styles.css -o dist/assets/css/styles.css --watch",
+    "start": "concurrently \"npm run watch:css\" \"npm run serve\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
