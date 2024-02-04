@@ -1,6 +1,6 @@
 ---
 age: kids
-category: Cuento gráfico
+category: Comic
 date: 2023-07-14
 image:
     text: Dos mujeres mayores cons su perritos

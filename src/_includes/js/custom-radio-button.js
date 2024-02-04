@@ -1,4 +1,5 @@
 class CustomRadioButton extends HTMLElement {
+    static observedAttributes = ['checked'];
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -11,9 +12,10 @@ class CustomRadioButton extends HTMLElement {
             }
 
             .radio-button {
+                cursor: pointer;
                 position: relative;
                 padding-left: 28px;
-                cursor: pointer;
+                white-space: nowrap;
             }
 
             .radio-button__input {
@@ -24,7 +26,7 @@ class CustomRadioButton extends HTMLElement {
 
             .radio-button__checkmark {
                 position: absolute;
-                top: 2px;
+                top: 0;
                 left: 0;
                 height: 16px;
                 width: 16px;
@@ -58,15 +60,16 @@ class CustomRadioButton extends HTMLElement {
         <label class="radio-button">
             <input class="radio-button__input" type="radio" role="radio" aria-checked="false">
             <span class="radio-button__checkmark"></span>
-            <slot></slot>
+            <span class="label-text"></span>
         </label>
         `;
 
         this.input = this.shadowRoot.querySelector('.radio-button__input');
+        this.labelTextElement = this.shadowRoot.querySelector('.label-text');
         this.input.addEventListener('change', this.handleChange.bind(this));
         this.input.addEventListener('focus', this.handleFocus.bind(this));
         this.input.addEventListener('blur', this.handleBlur.bind(this));
-    }
+    } 
 
     connectedCallback() {
         if (this.hasAttribute('checked')) {
@@ -74,9 +77,17 @@ class CustomRadioButton extends HTMLElement {
             this.input.setAttribute('aria-checked', 'true');
         }
 
-        const name = this.getAttribute('name');
-        if (name) {
-            this.input.setAttribute('name', name);
+        this.updateLabel();
+    }
+
+    attributeChangedCallback(name, _oldValue, newValue) {
+        if (name === 'checked') {
+            this.input.checked = newValue !== null;
+            this.input.setAttribute('aria-checked', newValue !== null ? 'true' : 'false');
+        } else if (name === 'name') {
+            this.input.setAttribute('name', newValue);
+        } else if (name === 'value') {
+            this.input.value = newValue;
         }
     }
 
@@ -120,6 +131,17 @@ class CustomRadioButton extends HTMLElement {
 
     isChecked() {
         return this.input.checked;
+    }
+
+    setLabel(text) {
+        this.labelText = text;
+        this.updateLabel();
+    }
+
+    updateLabel() {
+        if (this.labelTextElement && this.labelText) {
+            this.labelTextElement.textContent = this.labelText;
+        }
     }
 }
 

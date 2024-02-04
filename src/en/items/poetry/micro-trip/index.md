@@ -1,6 +1,6 @@
 ---
 age: items
-category: Poem
+category: Poetry
 date: 2020-06-27
 image:
     text: crossing a river

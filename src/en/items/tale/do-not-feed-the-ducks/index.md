@@ -17,11 +17,11 @@ title: Do not feed the ducks
 
 If you feed the ducks in the Manzanares, you run the risk of being confronted by Ramon who will reproach you with open arms as follows:
 
-Hey mate, if you feed the ducks, you will get a bill from the police.
+Oye amigo, if you feed the ducks, you will get a bill from the police.
 
 He pulls out a supermarket receipt from his pocket and waves it in the air.
 
-You will have to pay, pay for your acts.
+You will have to pay, lo pagarás.
 
 Look at the river, it's kind of charming, with its leaves over there and the plants that grew from nowhere.
 

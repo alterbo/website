@@ -20,7 +20,7 @@ class CustomCheckbox extends HTMLElement {
 
         .custom-checkbox .checkbox-label {
           font-size: 16px;
-          margin-left: 8px;
+          margin-left: 12px;
         }
 
         .custom-checkbox .checkbox-checkmark {

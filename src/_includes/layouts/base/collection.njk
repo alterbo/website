@@ -1,4 +1,4 @@
-{% set items = collections[locale + '_' + age] %}
+{% set items = collections[locale + '_' + age + '_' + category] %}
 
 {% set css %}
   {% include "css/link.css" %}
@@ -11,15 +11,15 @@
 {% from 'layouts/components/macros.njk' import collectionArticle %}
 
 <div class="flex justify-center">
-  {% for item in items | reverse %}
-    {% if loop.first %}<ul class="w-full">{% endif %}
+  <ul class="w-full">
+    {% for item in items | reverse %}
       {% if item.data.title %}
         <li class="mb-10">
           {{ collectionArticle(item.data.category, item.date, locale, item.data.title, item.data.thumb, item.url) }}
         </li>
       {% endif %}
-    {% if loop.last %}</ul>{% endif %}
-  {% endfor %}
+    {% endfor %}
+  </ul>
 </div>
 
 {% set js %}

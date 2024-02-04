@@ -1,6 +1,6 @@
 ---
 age: items
-category: Poema
+category: Poesia
 date: 2020-06-27
 image:
     text: Cruzando el río
