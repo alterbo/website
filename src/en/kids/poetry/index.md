@@ -6,4 +6,4 @@ locale: en
 tags: en_kids_poetry
 ---
 
-Poetry.
+Poetry. Empty poetry.

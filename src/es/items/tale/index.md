@@ -6,4 +6,4 @@ locale: es
 tags: es_items_tale
 ---
 
-Juegos para jugar disponibles.
+Cuentos para contar disponibles.

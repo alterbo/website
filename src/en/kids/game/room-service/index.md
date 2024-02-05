@@ -1,5 +1,5 @@
 ---
-age: items
+age: kids
 category: Game
 date: 2024-02-05
 description: Built with React and tailwind.

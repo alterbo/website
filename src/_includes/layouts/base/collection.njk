@@ -15,7 +15,7 @@
     {% for item in items | reverse %}
       {% if item.data.title %}
         <li class="mb-10">
-          {% if item.data.category === 'Game' %}
+          {% if item.data.category === 'Game' or item.data.category === 'Juego' %}
             {{ gameArticle(item.data.category, item.date, locale, item.data.title, item.data.thumb,
               item.data.url,
               item.data.description
