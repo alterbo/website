@@ -19,6 +19,10 @@
             "value": "game"
         },
         {
+            "name": "Comic",
+            "value": "comic"
+        },
+        {
             "name": "Poetry",
             "value": "poetry"
         },

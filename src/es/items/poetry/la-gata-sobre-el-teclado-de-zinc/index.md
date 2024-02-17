@@ -1,6 +1,6 @@
 ---
 age: items
-category: Cuento
+category: Poesia
 date: 2020-12-19
 image:
     text: La gata sobre el tejado de zinc

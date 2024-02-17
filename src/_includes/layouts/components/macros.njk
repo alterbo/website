@@ -1,4 +1,4 @@
-{% macro collectionArticle(category, date, locale, title, thumb, url) %}
+{% macro collectionArticle(category, date, locale, title, thumb, url, description) %}
     <article class="grid grid-rows-lol md:gap-10 md:grid-cols-lol md:grid-rows-nonlol mb-10 md:mb-7">
         <div class="border-2 border-double border-slate-200 flex justify-center p-4 w-full">
             <div class="relative w-full">
@@ -24,6 +24,7 @@
             <h2 class="border-b-2 border-slate-200 hover:border-slate-400 inline-block mb-1 mt-3 pb-1 text-3xl">
                 <a class="font-serif link" href="#" params-handler="{{ url }}">{{ title }}</a>
             </h2>
+            <p class="my-2">{{ description }}</p>
             <p class="my-2">{{ category }}, <time datetime="{{ date }}">{{ date | asPostDate(locale) }}</time></p>
         </div>
     </article>
@@ -64,6 +65,15 @@
     </article>
 {% endmacro %}
 
+{% macro itemCast(cast) %}
+    <h3>Cast:</h3>
+    <ul>
+        {% for item in cast %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
 {% macro itemFooter(date, locale) %}
     <footer class="p-4 max-w-screen-xl mx-auto my-10">
         <div class="border-2 border-double border-slate-200 p-4">
@@ -80,4 +90,10 @@
     <h1 class="font-serif max-w-screen-xl mx-auto text-3xl md:text-7xl md:pb-12 pb-7 px-4 pt-10">
         {{ title }}
     </h1>
+{% endmacro %}
+
+{% macro itemSubtitle(title) %}
+    <h2 class="slate-600 font-serif max-w-screen-xl mx-auto text-xl md:text-2xl md:pb-12 pb-7 px-4 pt-0">
+        {{ title }}
+    </h2>
 {% endmacro %}

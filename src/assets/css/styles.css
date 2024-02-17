@@ -46,7 +46,9 @@ fieldset > legend {
 }
 
 .font-serif {
-    font-family: 'Bodoni Moda', serif;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .mirror {

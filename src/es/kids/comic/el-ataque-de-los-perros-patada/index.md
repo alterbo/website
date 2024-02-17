@@ -12,6 +12,7 @@ tags: es_kids
 thumb:
     text: Dos mujeres mayores cons su perritos
     url: assets/images/thumb-el-ataque-de-los-perros-patada
+subtitle: Una historia sobre la superación del miedo.
 title: El ataque de los perros patada
 ---
 

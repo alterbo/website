@@ -17,16 +17,16 @@
     </style>
 
     <scene-viewer
-        class="flex flex-col h-screen items-center justify-end pb-24 px-3 relative overflow-hidden top-0 w-auto"
+        class="flex flex-col h-screen items-center justify-end pb-24 px-3 relative overflow-hidden text-lg md:text-2xl top-0 w-auto"
         animation="{{ animation }}"
     >
         {{ content | safe }}
     </scene-viewer>
     <div id="controls" length="{{ length }}" class="bottom-0 fixed flex justify-between pb-3 px-3 w-full">
-        <a id="prev-button" class="border border-slate-400 font-bold font-serif m-2 p-3 text-xl"><</a>
-        <a id="next-button" class="border border-slate-400 font-bold font-serif m-2 p-3 text-xl">></a>
+        <a id="prev-button" aria-label="Previous" class="border border-slate-400 font-bold font-serif m-2 p-3 text-xl">&larr;</a>
+        <a id="next-button" aria-label="Next" class="border border-slate-400 font-bold font-serif m-2 p-3 text-xl">&rarr;</a>
     </div>
-
+    
     {% set scenesliderjs %}
         {% include "js/scene-slider.js" %}
     {% endset %}

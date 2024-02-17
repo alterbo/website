@@ -21,7 +21,7 @@
               item.data.description
             ) }}
           {% else %}
-            {{ collectionArticle(item.data.category, item.date, locale, item.data.title, item.data.thumb, item.url) }}
+            {{ collectionArticle(item.data.category, item.date, locale, item.data.title, item.data.thumb, item.url, item.data.description) }}
           {% endif %}
         </li>
       {% endif %}
