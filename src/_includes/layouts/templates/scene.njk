@@ -6,7 +6,7 @@
 
 {% block nav %}
     <div class="flex fixed items-center justify-between p-4 top-0 w-full" id="nav">
-        <h1 class=" font-serif text-xl">{{ title }}</h1>
+        <h1 class=" font-serif text-xl lg:text-3xl">{{ title }}</h1>
         {% include 'layouts/components/close-button.njk' %}
     </div>
 {% endblock %}
@@ -17,7 +17,7 @@
     </style>
 
     <scene-viewer
-        class="flex flex-col h-screen items-center justify-end pb-24 px-3 relative overflow-hidden text-lg md:text-2xl top-0 w-auto"
+        class="flex flex-col h-screen items-center justify-end pb-7 lg:pb-24 px-3 relative overflow-hidden text-lg md:text-2xl top-0 w-auto"
         animation="{{ animation }}"
     >
         {{ content | safe }}

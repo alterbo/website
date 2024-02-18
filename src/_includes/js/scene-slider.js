@@ -47,6 +47,11 @@ function handleTouchEnd() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    if (('ontouchstart' in window || navigator.maxTouchPoints) && lengthElement) {
+        lengthElement.style.display = 'none';
+    }
+});
 document.addEventListener('touchstart', handleTouchStart);
 document.addEventListener('touchmove', handleTouchMove);
 document.addEventListener('touchend', handleTouchEnd);

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const categoryTranslations = {
         'all': { 'en': 'All', 'es': 'Todos' },
+        'comic': { 'en': 'Comic', 'es': 'Comic' },
         'game': { 'en': 'Game', 'es': 'Juego' },
         'poetry': { 'en': 'Poetry', 'es': 'Poesía' },
         'tale': { 'en': 'Tale', 'es': 'Cuento' },
