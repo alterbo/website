@@ -49,7 +49,7 @@ function handleTouchEnd() {
 
 document.addEventListener('DOMContentLoaded', function() {
     if (('ontouchstart' in window || navigator.maxTouchPoints) && lengthElement) {
-        lengthElement.style.display = 'none';
+        lengthElement.classList.add('on-touch-device');
     }
 });
 document.addEventListener('touchstart', handleTouchStart);

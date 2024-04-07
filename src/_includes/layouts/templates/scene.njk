@@ -16,15 +16,21 @@
         {{ scenecss | cssmin | safe }}
     </style>
 
-    <scene-viewer
-        class="flex flex-col h-screen items-center justify-end pb-7 lg:pb-24 px-3 relative overflow-hidden text-lg md:text-2xl top-0 w-auto"
-        animation="{{ animation }}"
-    >
-        {{ content | safe }}
-    </scene-viewer>
-    <div id="controls" length="{{ length }}" class="bottom-0 fixed flex justify-between pb-3 px-3 w-full">
-        <a id="prev-button" aria-label="Previous" class="border border-slate-400 font-bold font-serif m-2 p-3 text-xl">&larr;</a>
-        <a id="next-button" aria-label="Next" class="border border-slate-400 font-bold font-serif m-2 p-3 text-xl">&rarr;</a>
+    <div class="grid">
+        <scene-viewer
+            class="flex flex-col items-center justify-end min-h-full-moon pb-7 lg:pb-24 px-3 relative text-lg md:text-2xl top-0 w-auto"
+            animation="{{ animation }}"
+        >
+            {{ content | safe }}
+        </scene-viewer>
+        <div
+            id="controls"
+            length="{{ length }}"
+            class="bottom-0 fixed flex group justify-between pb-3 px-3 w-full"
+        >
+                <a id="prev-button" aria-label="Previous" class="border border-slate-400 font-bold font-serif m-2 p-3 text-4xl">&larr;</a>
+                <a id="next-button" aria-label="Next" class="border border-slate-400 font-bold font-serif m-2 p-3 text-4xl">&rarr;</a>
+        </div>
     </div>
     
     {% set scenesliderjs %}

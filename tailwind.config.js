@@ -11,9 +11,11 @@ module.exports = {
           'pink-floyd': 'repeat(2, auto 1fr)',
         },
         maxWidth: {
-          'settings-full': 'calc(100vw - 3.5rem - 4px)'
+          'settings-full': 'calc(100vw - 3.5rem - 4px)',
+        },
+        minHeight: {
+          'full-moon': 'calc(100vh - 4rem)',
         }
       },
     },
-    plugins: [],
   }

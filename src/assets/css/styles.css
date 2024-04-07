@@ -55,6 +55,13 @@ fieldset > legend {
     transform: scaleX(-1);
 }
 
+.on-touch-device a {
+    background-color: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 1rem;
+    line-height: 1;
+}
+
 .shape-outside-circle {
     shape-outside: circle();
 }
