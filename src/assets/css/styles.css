@@ -26,8 +26,8 @@ article ul {
 
 article ul li:before {
     content: "▪";
-    color: rgba(0,0,0,0.2);
-    padding-right: 12px;
+    color: lightgray;
+    padding-right: 0.5rem;
     font-size: larger;
 }
 
