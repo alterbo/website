@@ -1,6 +1,6 @@
 ---
 age: items
-category: Game
+category: App
 date: 2024-02-05
 description: Built with React and tailwind.
 locale: en

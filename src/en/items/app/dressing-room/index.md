@@ -1,6 +1,6 @@
 ---
 age: items
-category: Game
+category: App
 date: 2024-01-10
 description: Built with React and css modules.
 locale: en

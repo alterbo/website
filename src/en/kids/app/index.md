@@ -1,9 +1,9 @@
 ---
 age: kids
-category: game
+category: app
 layout: layouts/templates/kids.njk
 locale: en
-tags: en_kids_game
+tags: en_kids_app
 ---
 
-Games displayed to play.
+Apps displayed to take a look.

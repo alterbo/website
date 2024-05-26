@@ -8,15 +8,15 @@
   {{ css | cssmin | safe }}
 </style>
 
-{% from 'layouts/components/macros.njk' import collectionArticle, gameArticle %}
+{% from 'layouts/components/macros.njk' import collectionArticle, appArticle %}
 
 <div class="flex justify-center">
   <ul class="w-full">
     {% for item in items | reverse %}
       {% if item.data.title %}
         <li class="mb-10">
-          {% if item.data.category === 'Game' or item.data.category === 'Juego' %}
-            {{ gameArticle(item.data.category, item.date, locale, item.data.title, item.data.thumb,
+          {% if item.data.category === 'App' or item.data.category === 'App' %}
+            {{ appArticle(item.data.category, item.date, locale, item.data.title, item.data.thumb,
               item.data.url,
               item.data.description
             ) }}

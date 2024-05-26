@@ -1,9 +1,9 @@
 ---
 age: items
-category: game
+category: app
 layout: layouts/templates/items.njk
 locale: en
-tags: en_items_game
+tags: en_items_app
 ---
 
-Games displayed to play.
+Apps displayed to take a look.
