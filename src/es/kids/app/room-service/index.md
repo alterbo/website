@@ -1,6 +1,6 @@
 ---
 age: kids
-category: Juego
+category: App
 date: 2024-02-05
 description: Hecho con React + tailwind.
 locale: es

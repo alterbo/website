@@ -1,6 +1,6 @@
 ---
 age: items
-category: Juego
+category: App
 date: 2024-01-10
 description: Hecho con React + css modules.
 locale: es
