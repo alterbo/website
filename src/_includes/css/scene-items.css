@@ -17,11 +17,69 @@ svg {
     top: 0;
 }
 
+.full-sea {
+    bottom: 0;
+    display: flex;
+    left: 0;
+    height: 75%;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    width: 100%;
+}
+
+.full-sea path {
+    fill: lightblue;
+    stroke: darkslateblue;
+    stroke-width: 0.125rem;
+}
+[class^=sea] {
+    transform-origin: center;
+} 
+
+.sea1 {
+    animation: sea1 20s linear infinite alternate-reverse;
+}
+.sea2 {
+    animation: sea2 17s linear infinite alternate-reverse;
+}
+.sea3 {
+    animation: sea3 12s linear infinite alternate-reverse;
+}
+
+.wmn {
+    bottom: 0;
+    height: 75%;
+    left: 12.5%;
+    top: auto;
+    width: 75%;
+}
+
 [animation=right] .foreground {
     animation: right 7s linear infinite;
 }
 [animation=down] .foreground {
     animation: down 20s linear 1;
+}
+[animation=sea] .background,
+[animation=sea] .foreground:nth-child(2) {
+    animation: sea 20s linear infinite alternate-reverse;
+}
+[animation=sea] .foreground:nth-child(3) {
+    animation: sea 20s linear infinite alternate;
+}
+[animation=sea] .foreground:nth-child(1) {
+    animation: none;
+}
+
+.z-one {
+    z-index: -10;
+}
+.z-two {
+    z-index: -9;
+}
+.z-three {
+    z-index: -8;;
 }
 
 @keyframes right {
@@ -32,4 +90,16 @@ svg {
 @keyframes down {
     0% { transform: translateY(-50px); }
     100% { transform: translateY(0px); }
+}
+@keyframes sea1 {
+    0% { transform: scale(2) translateX(-100px); }
+    100% { transform: scale(2) translateX(100px); }
+}
+@keyframes sea2 {
+    0% { transform: scale(1.25) translateX(-100px); }
+    100% { transform: scale(1.25) translateX(100px); }
+}
+@keyframes sea3 {
+    0% { transform: scale(0.85) translateX(-100px); }
+    100% { transform: scale(0.85) translateX(100px); }
 }
