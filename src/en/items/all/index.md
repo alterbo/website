@@ -5,4 +5,4 @@ layout: layouts/templates/items.njk
 locale: en
 ---
 
-Welcome to The Menu, also known as The Items, a nice place. You, dear visitor, may open any item. The items are shy, but you know, it is a matter of time.
+Welcome to The Menu, a quite place. You may find here everything or nothing or the menu.
