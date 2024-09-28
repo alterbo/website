@@ -51,6 +51,16 @@ fieldset > legend {
     font-style: normal;
 }
 
+.link:visited {
+    color: gray;
+}
+
+.main-vector path {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 0.025rem;
+}
+
 .mirror {
     transform: scaleX(-1);
 }
@@ -64,4 +74,233 @@ fieldset > legend {
 
 .shape-outside-circle {
     shape-outside: circle();
+}
+
+.stroke-10 {
+    stroke-width: 10px;
+}
+
+/* SCENES ITEMS */
+.background,
+.foreground {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+p {
+    background-color: #fff;
+    padding: 0.725rem;
+}
+
+svg {
+    top: 0;
+}
+
+.full-sea {
+    bottom: 0;
+    display: flex;
+    left: 0;
+    height: 75%;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    width: 100%;
+}
+
+.full-sea path {
+    fill: lightblue;
+    stroke: darkslateblue;
+    stroke-width: 0.125rem;
+}
+[class^=sea] {
+    transform-origin: center;
+} 
+
+.sea1 {
+    animation: sea1 20s linear infinite alternate-reverse;
+}
+.sea2 {
+    animation: sea2 17s linear infinite alternate-reverse;
+}
+.sea3 {
+    animation: sea3 12s linear infinite alternate-reverse;
+}
+
+.wmn {
+    bottom: 0;
+    height: 75%;
+    left: 12.5%;
+    top: auto;
+    width: 75%;
+}
+
+[animation=right] .foreground {
+    animation: right 7s linear infinite;
+}
+[animation=down] .foreground {
+    animation: down 20s linear 1;
+}
+[animation=sea] .background,
+[animation=sea] .foreground:nth-child(2) {
+    animation: sea 20s linear infinite alternate-reverse;
+}
+[animation=sea] .foreground:nth-child(3) {
+    animation: sea 20s linear infinite alternate;
+}
+[animation=sea] .foreground:nth-child(1) {
+    animation: none;
+}
+
+.main-vector {
+    animation: fly 7s ease-in-out infinite;
+}
+.container-main-vector {
+    animation: flyParent 3s ease-out 1;
+}
+[class^="main-vector-"] {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+[class^="main-vector-1"] {
+    animation-name: wingFlap1;
+}
+[class^="main-vector-2"] {
+    animation-name: wingFlap2;
+}
+[class^="main-vector-3"] {
+    animation-name: wingFlap3;
+}
+[class^="main-vector-4"] {
+    animation-name: wingFlap4;
+}
+[class^="main-vector-5"] {
+    animation-name: wingFlap5;
+}
+[class^="main-vector-6"] {
+    animation-name: wingFlap6;
+}
+.main-static {
+    animation: bodyFloat 4s infinite ease-in-out alternate;
+}
+
+.z-one {
+    z-index: -10;
+}
+.z-two {
+    z-index: -9;
+}
+.z-three {
+    z-index: -8;;
+}
+
+@keyframes right {
+    0%, 100% { transform: translateX(0px); }
+    25% { transform: translateX(20px); }
+    75% { transform: translateX(-20px); }
+}
+@keyframes down {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(0px); }
+}
+@keyframes sea1 {
+    0% { transform: scale(2) translateX(-100px); }
+    100% { transform: scale(2) translateX(100px); }
+}
+@keyframes sea2 {
+    0% { transform: scale(1.25) translateX(-100px); }
+    100% { transform: scale(1.25) translateX(100px); }
+}
+@keyframes sea3 {
+    0% { transform: scale(0.85) translateX(-100px); }
+    100% { transform: scale(0.85) translateX(100px); }
+}
+@keyframes bodyFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes fly {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+    25% {
+        transform: translateX(-10px) translateY(-5px) rotate(-1.5deg);
+    }
+    50% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+    75% {
+        transform: translateX(5px) translateY(2px) rotate(2deg);
+    }
+    100% {
+        transform: translateX(0) rotate(0);
+    }
+}
+@keyframes flyParent {
+    0% {
+        transform: translateX(10px) translateY(30vh) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+}
+@keyframes wingFlap1 {
+    0.25%, 5%, 82.75%, 100% {
+        opacity: 1;
+    }
+    0%, 10%, 75% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap2 {
+    5%, 7%, 75%, 82.75% {
+        opacity: 1;
+    }
+    0%, 4.75%, 10%, 67.75%, 83.75%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap3 {
+    7%, 9%, 62.5%, 75% {
+        opacity: 1;
+    }
+    0%, 6.75%, 12.5%, 60%, 77.5%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap4 {
+    9%, 12.5%, 50%, 62.5% {
+        opacity: 1;
+    }
+    0%, 8.75%, 20%, 47.75%, 63.75%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap5 {
+    12.5%, 15%, 45%, 50% {
+        opacity: 1;
+    }
+    0%, 11.75%, 17%, 42%, 55%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap6 {
+    15%, 45% {
+        opacity: 1;
+    }
+    0%, 14.5%, 47%, 100% {
+        opacity: 0;
+    }
 }

@@ -2,14 +2,6 @@
 {% set ages = site.ages %}
 {% set categories = site.categories %}
 
-{% set css %}
-  {% include "css/vector.css" %}
-{% endset %}
-
-<style>
-  {{ css | cssmin | safe }}
-</style>
-
 <div class="px-4">
   <h2 class="font-serif mb-2 max-w-screen-xl mx-auto text-slate-400">
     {% if locale === 'en' %}
@@ -115,22 +107,6 @@
   </form>
 </div>
 
-{% set customradiobuttonjs %}
-    {% include "js/custom-radio-button.js" %}
-{% endset %}
-<script>
-    {{ customradiobuttonjs | jsmin | safe }}
-</script>
-{% set customcheckboxjs %}
-    {% include "js/custom-checkbox.js" %}
-{% endset %}
-<script>
-    {{ customcheckboxjs | jsmin | safe }}
-</script>
-
-{% set settingsjs %}
-    {% include "js/settings.js" %}
-{% endset %}
-<script>
-    {{ settingsjs | jsmin | safe }}
-</script>
+<script src="/js/custom-radio-button.js"></script>
+<script src="/js/custom-checkbox.js"></script>
+<script src="/js/settings.js"></script>

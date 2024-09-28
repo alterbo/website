@@ -11,15 +11,16 @@ document.addEventListener('DOMContentLoaded', function () {
         'es': 'Es',
     };
 
-    const pathName = new URL(location.href).pathname.split('/');
-    let age = pathName[2] ?? 'items';
-    let locale = pathName[1] ?? 'en';
-    let category = pathName[3] ?? 'all';
+    let age = globalThis.age ?? 'items';
+    let locale = globalThis.defaultLocale ?? 'en';
+    let category = globalThis.categoryParams ?? 'all';
+
     const categoryButtons = document.querySelectorAll('custom-radio-button[category=category]');
 
     categoryButtons.forEach((radioButton) => {
         radioButton.addEventListener('change', (event) => {
             category = event.detail.value;
+            globalThis.category = category;
             updateFormAction();
         });
     });
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const settingsForm = document.getElementById('settingsForm');
         settingsForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            const navURL = `/${locale}/${age}/${category}/?locale=${locale}&kids=${age}&category=${category}`;
+            const navURL = `/${globalThis.locale}/${globalThis.age}/${globalThis.category}/?locale=${globalThis.locale}&kids=${globalThis.age}&category=${globalThis.category}`;
             window.location.href = navURL;
         });
     }
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const updateCategoryLabels = () => {
         document.querySelectorAll('custom-radio-button[category=category]').forEach((catRadioButton) => {
             const catValue = catRadioButton.getAttribute('value');
-            const translatedName = categoryTranslations[catValue] ? categoryTranslations[catValue][locale] : catValue;
+            const translatedName = categoryTranslations[catValue] ? categoryTranslations[catValue][globalThis.locale] : catValue;
             catRadioButton.setLabel(translatedName);
         });
     }
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('custom-radio-button[category=locale]').forEach((radioButton) => {
         radioButton.addEventListener('change', (event) => {
             locale = event.detail.value;
+            globalThis.locale = locale;
             updateCategoryLabels();
             updateFormAction();
         });
@@ -61,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     checkbox.addEventListener('change', (event) => {
         const isChecked = event.target.checked;
         age = isChecked ? 'kids' : 'items';
+        globalThis.age = age;
         updateFormAction();
     });
 

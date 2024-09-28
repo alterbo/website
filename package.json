@@ -16,13 +16,13 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "clean-css": "^5.3.2",
-    "terser": "^5.24.0"
+    "clean-css": "^5.3.3",
+    "terser": "^5.32.0"
   },
   "devDependencies": {
-    "luxon": "^3.3.0",
-    "postcss": "^8.4.27",
-    "postcss-cli": "^10.1.0",
-    "tailwindcss": "^3.3.5"
+    "luxon": "^3.5.0",
+    "postcss": "^8.4.46",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.11"
   }
 }

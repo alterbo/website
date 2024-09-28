@@ -8,7 +8,7 @@
 {% endif %}
 
 {% block nav %}
-    <div class="flex justify-end p-4">
+    <div class="flex justify-end p-4 relative z-50">
         <div class="grid place-items-end">
             {% include 'layouts/components/menu-button.njk' %}
         </div>
@@ -16,7 +16,5 @@
 {% endblock %}
 
 {% block main %}
-    <div class="absolute grid h-full left-0 place-items-end top-0 w-full -z-10">
-        {% include 'layouts/templates/skeleton-walking.njk'%}
-    </div>
+    {% include 'layouts/templates/flying-laptop.njk'%}
 {% endblock %}

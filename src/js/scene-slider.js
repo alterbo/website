@@ -6,12 +6,7 @@ const length = lengthElement?.getAttribute('length');
 const nextButton = document.getElementById('next-button');
 const prevButton = document.getElementById('prev-button');
 
-const sceneViewerParams = new URLSearchParams(window.location.search);
-const categoryParams = sceneViewerParams.get('category');
-const defaultAge = sceneViewerParams.get('kids');
-const sceneLocale = sceneViewerParams.get('locale');
-const hasParams = sceneLocale?.length > 0 && defaultAge?.length > 0 && categoryParams?.length > 0;
-const params = `locale=${ sceneLocale ?? 'en' }&kids=${ defaultAge ?? 'off' }&category=${ categoryParams ?? 'all' }`;
+const params = `locale=${ globalThis.locale ?? 'en' }&kids=${ globalThis.age ?? 'off' }&category=${ globalThis.category ?? 'all' }`;
 const searchParams = new URLSearchParams(params).toString();
 
 const closeButton = document.getElementById('close-button');

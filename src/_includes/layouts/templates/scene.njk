@@ -1,9 +1,5 @@
 {% extends 'layouts/base/base.njk' %}
 
-{% set scenecss %}
-  {% include "css/scene-items.css" %}
-{% endset %}
-
 {% block nav %}
     <div class="flex fixed items-center justify-between p-4 top-0 w-full" id="nav">
         <h1 class=" font-serif text-xl lg:text-3xl">{{ title }}</h1>
@@ -12,9 +8,6 @@
 {% endblock %}
 
 {% block main %}
-    <style>
-        {{ scenecss | cssmin | safe }}
-    </style>
 
     <div class="grid">
         <scene-viewer
@@ -32,26 +25,11 @@
                 <a id="next-button" aria-label="Next" class="border border-slate-400 font-bold font-serif m-2 p-3 text-4xl">&rarr;</a>
         </div>
     </div>
-    
-    {% set scenesliderjs %}
-        {% include "js/scene-slider.js" %}
-    {% endset %}
-    <script>
-        {{ scenesliderjs | jsmin | safe }}
-    </script>
 
-    {% set sceneviewerjs %}
-        {% include "js/scene-viewer.js" %}
-    {% endset %}
-    <script>
-        {{ sceneviewerjs | jsmin | safe }}
-    </script>
+    <script src="/js/scene-slider.js"></script>
+
+    <script src="/js/scene-viewer.js"></script>
 
 {% endblock %}
 
-{% set togglenavjs %}
-    {% include "js/toggle-nav.js" %}
-{% endset %}
-<script>
-    {{ togglenavjs | jsmin | safe }}
-</script>
+<script src="/js/toggle-nav.js"></script>

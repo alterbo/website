@@ -31,18 +31,8 @@
         {{ itemFooter(date, locale) }}
     </article>
 
-    {% set sequenceparamsjs %}
-        {% include "js/sequence-params.js" %}
-    {% endset %}
-    <script>
-        {{ sequenceparamsjs | jsmin | safe }}
-    </script>
+    <script src="/js/sequence-params.js"></script>
 
 {% endblock %}
 
-{% set togglenavjs %}
-    {% include "js/toggle-nav.js" %}
-{% endset %}
-<script>
-    {{ togglenavjs | jsmin | safe }}
-</script>
+<script src="/js/toggle-nav.js"></script>

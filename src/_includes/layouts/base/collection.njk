@@ -1,13 +1,5 @@
 {% set items = collections[locale + '_' + age + '_' + category] %}
 
-{% set css %}
-  {% include "css/link.css" %}
-{% endset %}
-
-<style>
-  {{ css | cssmin | safe }}
-</style>
-
 {% from 'layouts/components/macros.njk' import collectionArticle, appArticle %}
 
 <div class="flex justify-center">
@@ -29,9 +21,4 @@
   </ul>
 </div>
 
-{% set js %}
-    {% include "js/collection-params.js" %}
-{% endset %}
-<script>
-    {{ js | jsmin | safe }}
-</script>
+<script src="/js/collection-params.js"></script>
