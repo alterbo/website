@@ -55,6 +55,10 @@ fieldset > legend {
     color: gray;
 }
 
+.svg-button path {
+    fill: none;
+}
+
 [class^="main-background-"] path,
 [class^="main-foreground-"] path,
 .main-vector path {
@@ -103,10 +107,6 @@ fieldset > legend {
 p {
     background-color: #fff;
     padding: 0.725rem;
-}
-
-svg {
-    top: 0;
 }
 
 .full-sea {
@@ -168,6 +168,8 @@ svg {
 [class^="main-foreground-"] {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    animation-play-state: paused;
+    visibility: hidden;
 }
 
 .main-background-1 {
@@ -188,15 +190,27 @@ svg {
 }
 .main-vector {
     animation: fly 7s ease-in-out infinite;
+    animation-play-state: paused;
 }
-.container-main-vector {
-    animation: flyParent 3s ease-out 1;
+.playing [class^="main-background-"],
+.playing [class^="main-foreground-"],
+.playing .main-vector,
+.playing [class^="main-vector-"],
+.playing .main-static {
+    animation-play-state: running;
+}
+.playing [class^="main-background-"],
+.playing [class^="main-foreground-"],
+.playing [class^="main-vector-"] {
+    visibility: visible;
 }
 [class^="main-vector-"] {
     animation-duration: 1s;
     animation-iteration-count: infinite;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
+    animation-play-state: paused;
+    visibility: hidden;
 }
 [class^="main-vector-1"] {
     animation-name: wingFlap1;
@@ -218,6 +232,25 @@ svg {
 }
 .main-static {
     animation: bodyFloat 4s infinite ease-in-out alternate;
+    animation-play-state: paused;
+}
+
+.svg-button {
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+}
+.svg-button:focus {
+    border-color: #000;
+    outline: none;
+}
+.svg-button svg {
+    transition: transform 0.5s ease-in-out;
+}
+.rotate {
+    transform: rotate(360deg);
 }
 
 .z-one {
@@ -290,14 +323,6 @@ svg {
     }
     75% {
         transform: translateX(5px) translateY(2px) rotate(2deg);
-    }
-    100% {
-        transform: translateX(0) rotate(0);
-    }
-}
-@keyframes flyParent {
-    0% {
-        transform: translateX(10px) translateY(30vh) rotate(-2deg);
     }
     100% {
         transform: translateX(0) translateY(0) rotate(0);
