@@ -237,7 +237,6 @@ p {
 
 .svg-button {
     background: none;
-    border: 1px solid transparent;
     cursor: pointer;
     padding: 10px;
     outline: none;
@@ -249,7 +248,7 @@ p {
 .svg-button svg {
     transition: transform 0.5s ease-in-out;
 }
-.rotate {
+.svg-button .rotate {
     transform: rotate(360deg);
 }
 
