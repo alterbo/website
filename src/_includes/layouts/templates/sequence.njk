@@ -23,16 +23,22 @@
                 {{ content | safe }}
             </div>
             <div class="flex justify-center p-7">
-                <a class="border border-slate-400 m-3 p-3 text-center text-xl" id="start-button"/>
-                    {{ 'Go' if locale === 'en' else 'Entrar' }}
+                <a class="border border-slate-400 brutton m-3 p-3 text-center text-xl" id="start-button"/>
+                    <span class="border-b-2 border-transparent hover:border-slate-200">{{ 'Go' if locale === 'en' else 'Entrar' }}</span>
                 </a>
             </div>
         </section>
         {{ itemFooter(date, locale) }}
     </article>
 
-    <script src="/js/sequence-params.js"></script>
+    {% set sequencejs %} {% include "js/sequence-params.js" %} {% endset %}
+    <script>
+        {{ sequencejs | jsmin | safe }}
+    </script>
 
 {% endblock %}
 
-<script src="/js/toggle-nav.js"></script>
+{% set navjs %} {% include "js/toggle-nav.js" %} {% endset %}
+<script>
+    {{ navjs | jsmin | safe }}
+</script>

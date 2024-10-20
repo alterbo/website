@@ -1,0 +1,178 @@
+[class^="main-background-"] path,
+[class^="main-foreground-"] path,
+.main-vector path {
+    fill: #fff;
+    stroke: #000;
+}
+
+.main-vector path {
+    stroke-width: 0.025rem;
+}
+[class^="main-background-"] path,
+[class^="main-foreground-"] path{
+    stroke-width: 0.015rem;
+}
+
+[class^="main-background-"],
+[class^="main-foreground-"] {
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    visibility: hidden;
+}
+
+.main-background-1 {
+    animation-name: cloud1;
+    animation-duration: 10s;
+}
+.main-background-2 {
+    animation-name: cloud2;
+    animation-duration: 15s;
+}
+.main-foreground-1 {
+    animation-name: cloud1;
+    animation-duration: 20s;
+}
+.main-foreground-2 {
+    animation-name: cloud2;
+    animation-duration: 35s;
+}
+.main-vector {
+    animation: fly 7s ease-in-out infinite;
+    animation-play-state: paused;
+}
+.playing [class^="main-background-"],
+.playing [class^="main-foreground-"],
+.playing .main-vector,
+.playing [class^="main-vector-"],
+.playing .main-static {
+    animation-play-state: running;
+}
+.playing [class^="main-background-"],
+.playing [class^="main-foreground-"],
+.playing [class^="main-vector-"] {
+    visibility: visible;
+}
+[class^="main-vector-"] {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    animation-play-state: paused;
+    visibility: hidden;
+}
+[class^="main-vector-1"] {
+    animation-name: wingFlap1;
+}
+[class^="main-vector-2"] {
+    animation-name: wingFlap2;
+}
+[class^="main-vector-3"] {
+    animation-name: wingFlap3;
+}
+[class^="main-vector-4"] {
+    animation-name: wingFlap4;
+}
+[class^="main-vector-5"] {
+    animation-name: wingFlap5;
+}
+[class^="main-vector-6"] {
+    animation-name: wingFlap6;
+}
+.main-static {
+    animation: bodyFloat 4s infinite ease-in-out alternate;
+    animation-play-state: paused;
+}
+
+@keyframes bodyFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes cloud1 {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(70vw);
+    }
+}
+@keyframes cloud2 {
+    0% {
+        transform: translateX(-70vw);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+@keyframes fly {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+    25% {
+        transform: translateX(-10px) translateY(-5px) rotate(-1.5deg);
+    }
+    50% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+    75% {
+        transform: translateX(5px) translateY(2px) rotate(2deg);
+    }
+    100% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+}
+@keyframes wingFlap1 {
+    0.25%, 5%, 82.75%, 100% {
+        opacity: 1;
+    }
+    0%, 10%, 75% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap2 {
+    5%, 7%, 75%, 82.75% {
+        opacity: 1;
+    }
+    0%, 4.75%, 10%, 67.75%, 83.75%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap3 {
+    7%, 9%, 62.5%, 75% {
+        opacity: 1;
+    }
+    0%, 6.75%, 12.5%, 60%, 77.5%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap4 {
+    9%, 12.5%, 50%, 62.5% {
+        opacity: 1;
+    }
+    0%, 8.75%, 20%, 47.75%, 63.75%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap5 {
+    12.5%, 15%, 45%, 50% {
+        opacity: 1;
+    }
+    0%, 11.75%, 17%, 42%, 55%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes wingFlap6 {
+    15%, 45% {
+        opacity: 1;
+    }
+    0%, 14.5%, 47%, 100% {
+        opacity: 0;
+    }
+}

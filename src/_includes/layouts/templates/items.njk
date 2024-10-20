@@ -7,6 +7,16 @@
     {% set title = 'Menu' %}
 {% endif %}
 
+{% block skiplink %}
+    <a class="brutton sr-only focus:not-sr-only" href="#main-content">
+        {% if locale === 'es' %}
+            Saltar al contenido
+        {% else %}
+            Skip to content
+        {% endif %}
+    </a>
+{% endblock %}
+
 {% block nav %}
     <div class="flex justify-between p-4">
         {% include 'layouts/components/home-button.njk' %}

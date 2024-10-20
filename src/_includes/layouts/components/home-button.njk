@@ -10,4 +10,7 @@
     </svg>
 </div>
 
-<script src="/js/settings-params.js"></script>
+{% set js %} {% include "js/settings-params.js" %} {% endset %}
+<script>
+    {{ js | jsmin | safe }}
+</script>

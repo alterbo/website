@@ -10,4 +10,7 @@
     </svg>
 </div>
 
-<script src="/js/menu.js"></script>
+{% set js %} {% include "js/menu.js" %} {% endset %}
+<script>
+    {{ js | jsmin | safe }}
+</script>

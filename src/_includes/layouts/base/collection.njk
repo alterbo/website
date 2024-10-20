@@ -21,4 +21,7 @@
   </ul>
 </div>
 
-<script src="/js/collection-params.js"></script>
+{% set js %} {% include "js/collection-params.js" %} {% endset %}
+<script>
+    {{ js | jsmin | safe }}
+</script>
