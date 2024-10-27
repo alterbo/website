@@ -18,13 +18,13 @@
                 {{ itemCast(cast) }}
             </section>
         {% endif %}
-        <section class="border-2 border-double border-slate-200 grid grid-flow-row h-full items-center justify-center m-4">
-            <div class="h-[30vh]">
+        <section class="border-2 border-double border-slate-200 grid grid-flow-row h-full items-center justify-center m-4 p-4 dark:border-slate-700">
+            <div class="bg-white h-[30vh]">
                 {{ content | safe }}
             </div>
             <div class="flex justify-center p-7">
-                <a class="border border-slate-400 brutton m-3 p-3 text-center text-xl" id="start-button"/>
-                    <span class="border-b-2 border-transparent hover:border-slate-200">{{ 'Go' if locale === 'en' else 'Entrar' }}</span>
+                <a class="border border-slate-400 brutton m-3 p-3 text-center text-xl dark:border-slate-600" id="start-button"/>
+                    <span class="border-b-2 border-transparent text-slate-800 dark:text-slate-200 hover:border-slate-200 dark:hover:border-slate-800">{{ 'Go' if locale === 'en' else 'Entrar' }}</span>
                 </a>
             </div>
         </section>

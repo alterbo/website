@@ -1,8 +1,8 @@
 {% extends 'layouts/base/base.njk' %}
 
 {% block nav %}
-    <div class="flex fixed items-center justify-between p-4 top-0 w-full" id="nav">
-        <h1 class=" font-serif text-xl lg:text-3xl">{{ title }}</h1>
+    <div class="flex fixed items-center justify-between p-4 top-0 w-full dark:bg-[#232323]" id="nav">
+        <h1 class=" font-serif text-xl text-slate-800 dark:text-slate-200 lg:text-3xl">{{ title }}</h1>
         {% include 'layouts/components/close-button.njk' %}
     </div>
 {% endblock %}
@@ -16,7 +16,7 @@
 
     <div class="grid">
         <scene-viewer
-            class="flex flex-col items-center justify-end min-h-full-moon pb-16 lg:pb-24 px-3 relative text-lg md:text-2xl top-0 w-auto"
+            class="flex flex-col items-center justify-end min-h-full-moon pb-16 px-3 relative text-lg top-0 w-auto dark:bg-[#ededed] md:text-2xl lg:pb-24"
             animation="{{ animation }}"
         >
             {{ content | safe }}
@@ -26,11 +26,11 @@
             length="{{ length }}"
             class="bottom-0 fixed flex group justify-between pb-3 px-3 w-full"
         >
-            <a id="prev-button" aria-label="Previous" class="border border-slate-400 brutton font-bold font-serif m-2 p-3 text-4xl">
-                <span class="border-b-2 border-transparent hover:border-slate-200">&larr;</span>
+            <a id="prev-button" aria-label="Previous" class="border border-slate-400 brutton font-bold font-serif m-2 p-3 text-4xl dark:bg-[#232323] dark:border-slate-600">
+                <span class="border-b-2 border-transparent text-slate-800 dark:text-slate-200 hover:border-slate-200 dark:hover:border-slate-600">&larr;</span>
             </a>
-            <a id="next-button" aria-label="Next" class="border border-slate-400 brutton font-bold font-serif m-2 p-3 text-4xl">
-                <span class="border-b-2 border-transparent hover:border-slate-200">&rarr;</span>
+            <a id="next-button" aria-label="Next" class="border border-slate-400 brutton font-bold font-serif m-2 p-3 text-4xl dark:bg-[#232323] dark:border-slate-600">
+                <span class="border-b-2 border-transparent text-slate-800 dark:text-slate-200 hover:border-slate-200 dark:hover:border-slate-600">&rarr;</span>
             </a>
         </div>
     </div>

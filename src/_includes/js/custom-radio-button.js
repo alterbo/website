@@ -11,6 +11,10 @@ class CustomRadioButton extends HTMLElement {
                 line-height: 1.25rem;
             }
 
+            .label-text {
+                color: #232323;
+            }
+
             .radio-button {
                 cursor: pointer;
                 position: relative;
@@ -54,6 +58,21 @@ class CustomRadioButton extends HTMLElement {
             .radio-button__input:focus + .radio-button__checkmark {
                 border: 2px solid #000;
                 outline: none;
+            }
+            @media (prefers-color-scheme: dark) {
+                .label-text {
+                    color: #ededed;
+                }
+                .radio-button__checkmark {
+                    background-color: #595959;
+                }
+                .radio-button__checkmark:after {
+                    background-color: #ededed;
+                }
+                .radio-button__input:focus + .radio-button__checkmark {
+                    border-color: #ededed;
+
+                }
             }
         </style>
 

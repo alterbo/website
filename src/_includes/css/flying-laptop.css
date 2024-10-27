@@ -2,7 +2,15 @@
 [class^="main-foreground-"] path,
 .main-vector path {
     fill: #fff;
-    stroke: #000;
+    stroke: #232323;
+}
+@media (prefers-color-scheme: dark) {
+    [class^="main-background-"] path,
+    [class^="main-foreground-"] path,
+    .main-vector path {
+        fill: #232323;
+        stroke: #ededed;
+    }
 }
 
 .main-vector path {

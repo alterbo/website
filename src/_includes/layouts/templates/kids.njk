@@ -8,7 +8,7 @@
 {% endif %}
 
 {% block skiplink %}
-    <a class="brutton sr-only focus:not-sr-only" href="#main-content">
+    <a class="brutton sr-only dark:text-slate-200 focus:not-sr-only" href="#main-content">
         {% if locale === 'es' %}
             Saltar al contenido
         {% else %}
@@ -27,7 +27,7 @@
 {% block main %}
     <div class="p-3 md:p-6 mb-10">
         <div class="max-w-screen-xl mx-auto">
-            <h1 class="font-serif mb-3 text-4xl text-slate-400">
+            <h1 class="font-serif mb-3 text-4xl text-slate-400 dark:text-slate-600">
                 {% if locale === 'en' %}
                     Menu
                 {% endif %}
@@ -35,7 +35,7 @@
                     Menú
                 {% endif %}
             </h1>
-            <div class="mb-10 text-l text-slate-700">
+            <div class="mb-10 text-l text-slate-700 dark:text-slate-300">
                 {{ content | safe}}
             </div>
         </div>

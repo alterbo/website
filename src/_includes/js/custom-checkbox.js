@@ -19,6 +19,7 @@ class CustomCheckbox extends HTMLElement {
         }
 
         .custom-checkbox .checkbox-label {
+          color: #232323;
           font-size: 16px;
           margin-left: 12px;
         }
@@ -58,6 +59,20 @@ class CustomCheckbox extends HTMLElement {
         .custom-checkbox input:focus + .checkbox-container .checkbox-checkmark {
           border: 2px solid #000;
           outline: none;
+        }
+        @media (prefers-color-scheme: dark) {
+          .custom-checkbox .checkbox-label {
+            color: #ededed;
+          }
+          .custom-checkbox .checkbox-checkmark {
+            border-color: #595959;
+          }
+          .custom-checkbox .checkbox-checkmark:after {
+            border-color: #ededed;
+          }
+          .custom-checkbox input:focus + .checkbox-container .checkbox-checkmark {
+            border-color: #ededed;
+          }
         }
       </style>
       

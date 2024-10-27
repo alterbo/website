@@ -103,3 +103,21 @@ fieldset > legend {
 .svg-button .rotate {
     transform: rotate(360deg);
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #232323;
+    }
+    .brutton:active {
+        background-color: rgba(239, 239, 239, 0.2);
+        color: rgba(27, 27, 27, 0.8);
+    }
+    .brutton:focus-visible ,
+    .linkon:focus-visible,
+    .svg-button:focus-visible  {
+        outline-color: #ededed;
+    }
+    .on-touch-device a {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+} 

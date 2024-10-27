@@ -10,7 +10,15 @@
 
 scene-viewer p {
     background-color: #fff;
+    color: #232323;
     padding: 0.725rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    scene-viewer p {
+        background-color: #232323;
+        color: #ededed;
+    }
 }
 
 .full-sea {

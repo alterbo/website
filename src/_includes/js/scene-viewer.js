@@ -13,7 +13,7 @@ class SceneViewer extends HTMLElement {
           }
         </style>
         
-        <div id='sceneViewer'>
+        <div id="sceneViewer">
             <slot></slot>
         </div>
       `;
