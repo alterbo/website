@@ -5,4 +5,4 @@ layout: layouts/templates/items.njk
 locale: en
 ---
 
-Welcome to The Menu, a quite place. You may find here everything or nothing or the menu.
+Welcome to The Menu, a quiet place. You may find here everything or nothing or the menu.
