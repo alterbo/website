@@ -14,7 +14,7 @@ module.exports = {
           'settings-full': 'calc(100vw - 3.5rem - 4px)',
         },
         minHeight: {
-          'full-moon': 'calc(100vh - 4rem)',
+          'full-moon': 'calc(100svh - 4rem)',
         }
       },
     },

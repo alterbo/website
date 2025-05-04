@@ -11,8 +11,10 @@
 
 {% block main %}
     <article>
-        {{ itemTitle(title) }}
-        {{ itemSubtitle(subtitle) }}
+        <hgroup>
+            {{ itemTitle(title) }}
+            {{ itemSubtitle(subtitle) }}
+        </hgroup>
         {% if cast %}
             <section class="max-w-screen-xl mx-auto px-4">
                 {{ itemCast(cast) }}
