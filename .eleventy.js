@@ -1,8 +1,8 @@
-const CleanCSS = require('clean-css');
-const { DateTime } = require('luxon');
-const { minify } = require('terser');
+import CleanCSS from 'clean-css';
+import { DateTime } from 'luxon';
+import { minify } from 'terser';
 
-module.exports = function(eleventyConfig) {
+export default function (eleventyConfig) {
     const files = [
         'src/assets/favicon.ico',
     ];

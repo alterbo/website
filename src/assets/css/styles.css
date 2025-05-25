@@ -1,6 +1,13 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss";
+
+@theme {
+    --grid-template-columns-lol: 33vw auto 1fr;
+    --grid-template-rows-lol: 100px auto;
+    --grid-template-rows-nonlol: auto;
+    --grid-template-rows-pink-floyd: repeat(2, auto 1fr);
+    --max-width-settings-full: calc(100vw - 3.5rem - 4px);
+    --min-height-full-moon: calc(100svh - 4rem);
+}
 
 html,
 body {
