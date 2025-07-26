@@ -1,11 +1,15 @@
-.background,
-.foreground {
+:is(.background, .foreground) {
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: -1;
+}
+
+:is(.foreground-bottom) {
+    bottom: 0;
+    top: auto;
 }
 
 scene-viewer p {
@@ -76,6 +80,73 @@ scene-viewer p {
     animation: none;
 }
 
+[class^=cloud] {
+    animation: cloud-move 4s linear infinite;
+    left: 40%;
+    opacity: 0;
+    position: absolute;
+}
+
+[class^=cloud] > :is(ellipse, path) {
+    vector-effect: non-scaling-stroke;
+}
+
+[class^=cloud-up]{
+    animation-name: cloud-up-move;
+    animation-duration: 3s;
+}
+.cloud-two {
+    animation-duration: 10s;
+    animation-delay: 2s;
+    scale: 1.25;
+}
+.cloud-three {
+    animation-duration: 7s;
+    animation-delay: 3s;
+    scale: 2.65;
+}
+.cloud-up-two {
+    animation-duration: 7s;
+    animation-delay: 1s;
+    scale: 1.25;
+}
+.cloud-up-three {
+    animation-duration: 5s;
+    animation-delay: 2s;
+    scale: 2.65;
+}
+
+.motion-one {
+    animation: motion-one-of-three 1.2s steps(1, end) infinite;
+}
+.motion-two {
+    animation: motion-two-of-three 1.2s steps(1, end) infinite;
+}
+.motion-three {
+    animation: motion-three-of-three 1.2s steps(1, end) infinite;
+}
+
+.motion-slow-one {
+    animation: motion-one-of-three 7s steps(1, end) infinite;
+}
+.motion-slow-two {
+    animation: motion-two-of-three 7s steps(1, end) infinite
+}
+.motion-slow-three {
+    animation: motion-three-of-three 7s steps(1, end) infinite
+}
+
+.vector {
+    fill: white;
+    stroke: #232323;
+}
+@media (prefers-color-scheme: dark) {
+    .vector {
+        fill: #232323;
+        stroke: white;
+    }
+}
+
 .z-one {
     z-index: -10;
 }
@@ -83,7 +154,7 @@ scene-viewer p {
     z-index: -9;
 }
 .z-three {
-    z-index: -8;;
+    z-index: -8;
 }
 
 @keyframes right {
@@ -106,4 +177,57 @@ scene-viewer p {
 @keyframes sea3 {
     0% { transform: scale(0.85) translateX(-100px); }
     100% { transform: scale(0.85) translateX(100px); }
+}
+@keyframes motion-one-of-three {
+    0% { opacity: 1; }
+    14% { opacity: 0; }
+    57% { opacity: 0; }
+    71% { opacity: 1; }
+    100% { opacity: 1; }
+}
+@keyframes motion-two-of-three {
+    0% { opacity: 0; }
+    14% { opacity: 1; }
+    28% { opacity: 0; }
+    57% { opacity: 1; }
+    71% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes motion-three-of-three {
+    0%, 28% { opacity: 0; }
+    28% { opacity: 1; }
+    57% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes cloud-move {
+    0% {
+        transform: translateX(110vw);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-20vw);
+        opacity: 0;
+    }
+}
+@keyframes cloud-up-move {
+    0% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20vh);
+        opacity: 0;
+    }
 }
