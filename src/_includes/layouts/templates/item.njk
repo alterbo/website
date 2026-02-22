@@ -2,42 +2,55 @@
 
 {% from 'layouts/components/macros.njk' import itemFooter, itemTitle %}
 
-{% block nav %}
-    <div class="flex justify-between p-4">
+{% block header %}
+    <div class="flex justify-center">
         {% include 'layouts/components/home-button.njk' %}
-        {% include 'layouts/components/menu-button.njk' %}
     </div>
 {% endblock %}
 
 {% block main %}
-    <article>
-        {% if image !== undefined %}
-            <div class="md:m-8 md:px-0 mx-auto px-4">
-                <div class="border-2 border-double border-slate-200 dark:border-slate-700 md:p-8 p-4">
-                    <picture class="block max-w-screen-md mx-auto">
-                        <source
-                            type="image/webp"
-                            media="(min-width: 720px)"
-                            srcset="./../../../../{{ image.url }}.webp"
-                        >
-                        <source
-                            type="image/jpeg"
-                            media="(min-width: 720px)"
-                            srcset="./../../../../{{ image.url }}.jpg"
-                        >
-                        <img
-                            class="block mx-auto"
-                            alt="{{ img.text }}"
-                            src="./../../../../{{ thumb.url }}.jpg"
-                        >
-                    </picture>
-                </div>
+    <article class="my-10">
+        <div class="gap-10 grid *:gap-10 *:grid">
+            <div class="gap-10 grid justify-start text-slate-800 dark:text-slate-200">
+                <div class="pl-7 xs:pl-10">{{ itemTitle(title) }}</div>
+                <hr />
             </div>
-        {% endif %}
-        <div class="text-slate-800 dark:text-slate-200">{{ itemTitle(title) }}</div>
-        <section class="max-w-screen-md mx-auto px-4 text-base text-slate-800 dark:text-slate-200 md:text-lg">
-            {{ content | safe }}
-        </section>
-        {{ itemFooter(date, locale) }}
+            <aside>
+                <div class="gap-3 grid *:px-7 *:xs:px-10">
+                    <h2 class="font-primary text-xl md:text-3xl">{{ 'item.info' | t(locale) }}</h2>
+                    <div>
+                        <span class="font-primary">{{ 'item.category' | t(locale) }}:</span>
+                        {% set normalizedCategory = category | categoryKey %}
+                        <span>{{ ('category.' + normalizedCategory) | t(locale) }}</span>
+                    </div>
+                    <div>
+                        <span class="font-primary">{{ 'item.alttext' | t(locale) }}:</span>
+                        <span>{{ image.text }}</span>
+                    </div>
+                    {{ itemFooter(date, locale) }}
+                </div>
+            </aside>
+            <div class="grid-cols-[1fr_1fr] grid-rows-[1px_auto]">
+                <hr />
+                <svg viewBox="0 0 800 200" class="col-span-2 w-full h-auto vector" role="img" aria-label="{{ item.data.title }}">
+                    <rect class="solid" width="800" height="200" fill="currentColor"></rect>
+                    <g>
+                        {% if path %}
+                            <path class="shape solid" d="{{ path }}" />
+                        {% else %}
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="42" fill="currentColor">{{ title }}</text>
+                        {% endif %}
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="gap-3 grid grid-cols-[1fr_1fr] my-10 xs:gap-10">
+            <hr class="col-2" />
+            <div class="item-contents col-span-2 max-w-screen-md mx-auto px-7 py-17 text-base text-slate-800 dark:text-slate-200 md:text-lg xs:px-10">
+                {{ content | sanitizeHtml | safe }}
+            </div>
+        </div>
     </article>
+    {% include 'layouts/components/related-items.njk' %}
+    {% include 'layouts/components/footer.njk' %}
 {% endblock %}

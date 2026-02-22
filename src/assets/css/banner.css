@@ -1,0 +1,5 @@
+.banner-moustache .moustache-part { will-change:transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-moustache .moustache-part { will-change:auto; }
+}

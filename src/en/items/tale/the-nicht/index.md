@@ -3,15 +3,12 @@ age: items
 category: Tale
 date: 2024-07-21
 image:
-    text: Office job in the meadow
-    url: assets/images/the-nicht
+    text: A minimal meadow with a conversation in the sky
 layout: layouts/templates/item.njk
 locale: en
 tags: en_items
-thumb:
-    text: Office job in the meadow
-    url: assets/images/thumb-the-nicht
 title: The Nicht
+path: M312.1 59.5h116.1M0 167.2a639 639 0 0 1 266.7 0c133.3 28.2 177.7 18.8 266.6 0a639 639 0 0 1 266.7 0m-509.5-155h189a16 16 0 0 1 16.2 16.3v64.8a16 16 0 0 1-16.2 16.2H355.3l-29.7 24.3 8.1-24.4h-43.2a16 16 0 0 1-16.2-16.2V28.6a16 16 0 0 1 16.2-16.2m145.8 36.5h18.9a4 4 0 0 1 4 4v13.6a4 4 0 0 1-4 4h-18.9a4 4 0 0 1-4-4V52.8a4 4 0 0 1 4-4.1
 ---
 
 My career as a software developer began at an Austrian company located in the heart of our old continent. The corporate language was English. The code, the documentation. Everything was in English, but the bosses spoke to each other in German. Deutsch. You have to say it with discipline, making sure to pronounce each of the letters, especially the end. Deutsch. So many consonants lined up waiting to be mentioned. Long words like deserts in that language, conjugations and a different order, that's Deutsch, my friends.

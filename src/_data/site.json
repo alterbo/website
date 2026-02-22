@@ -11,10 +11,6 @@
     ],
     "categories": [
         {
-            "name": "All",
-            "value": "all"
-        },
-        {
             "name": "App",
             "value": "app"
         },
@@ -36,15 +32,13 @@
             "category": "locale",
             "name": "En",
             "url": "/en",
-            "value": "en",
-            "vector": ""
+            "value": "en"
         },
         {
             "category": "locale",
             "name": "Es",
             "url": "/es",
-            "value": "es",
-            "vector": ""
+            "value": "es"
         }
     ]
 }

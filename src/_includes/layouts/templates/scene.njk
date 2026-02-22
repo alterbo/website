@@ -1,53 +1,75 @@
 {% extends 'layouts/base/base.njk' %}
 
-{% block nav %}
-    <div class="flex fixed items-center justify-between p-4 top-0 w-full dark:bg-[#232323]" id="nav">
-        <h1 class=" font-serif text-xl text-slate-800 dark:text-slate-200 lg:text-3xl">{{ title }}</h1>
-        {% include 'layouts/components/close-button.njk' %}
-    </div>
-{% endblock %}
-
 {% block main %}
 
-    {% set css %} {% include "css/scene.css" %} {% endset %}
-    <style>
-        {{ css | cssmin | safe }}
-    </style>
-
-    <div class="grid">
-        <scene-viewer
-            class="flex flex-col items-center justify-end min-h-full-moon pb-16 px-3 relative text-lg top-0 w-auto dark:bg-[#ededed] md:text-2xl lg:pb-24"
-            animation="{{ animation }}"
-        >
-            {{ content | safe }}
-        </scene-viewer>
-        <div
+    <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] min-h-[100svh]">
+        <header class="gap-7 flex flex-wrap items-center p-3 xs:px-10">
+            <h1
+                id="scene-heading"
+                class="font-primary mr-auto text-2xl text-slate-800 dark:text-slate-200 xs:text-3xl lg:text-5xl"
+                tabindex="-1"
+            >
+                {{ title }}
+            </h1>
+            <p
+                id="scene-page"
+                class="font-primary text-slate-600 dark:text-slate-400 xs:text-lg"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+                <span id="scene-page-number">1 / {{ length }}</span>
+            </p>
+            {% include 'layouts/components/close-button.njk' %}
+        </header>
+        <section role="group" aria-labelledby="scene-heading" class="min-h-0">
+            <scene-viewer
+                animation="{{ animation }}"
+                class="text-lg xs:text-2xl"
+            >
+                {{ content | sanitizeHtml | safe }}
+            </scene-viewer>
+        </section>
+        <nav
             id="controls"
             length="{{ length }}"
-            class="bottom-0 fixed flex group justify-between pb-3 px-3 w-full"
+            role="navigation"
+            aria-label="Story navigation"
+            class="flex justify-between pb-3 px-3 w-full"
         >
-            <a id="prev-button" aria-label="Previous" class="border border-slate-400 brutton font-bold font-serif m-2 p-3 text-4xl dark:bg-[#232323] dark:border-slate-600">
-                <span class="border-b-2 border-transparent text-slate-800 dark:text-slate-200 hover:border-slate-200 dark:hover:border-slate-600">&larr;</span>
+            <a id="prev-button" aria-label="Previous page" rel="prev" class="font-bold font-primary m-2 p-3 text-4xl group">
+                <svg
+                    aria-hidden="true"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="square"
+                    class="text-slate-800 dark:text-slate-200 transition-colors group-hover:text-slate-200 dark:group-hover:text-slate-600"
+                >
+                    <line x1="16" y1="6" x2="8" y2="12" />
+                    <line x1="16" y1="18" x2="8" y2="12" />
+                </svg>
             </a>
-            <a id="next-button" aria-label="Next" class="border border-slate-400 brutton font-bold font-serif m-2 p-3 text-4xl dark:bg-[#232323] dark:border-slate-600">
-                <span class="border-b-2 border-transparent text-slate-800 dark:text-slate-200 hover:border-slate-200 dark:hover:border-slate-600">&rarr;</span>
+            <a id="next-button" aria-label="Next page" rel="next" class="font-bold font-primary m-2 p-3 text-4xl group">
+                <svg
+                    aria-hidden="true"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="square"
+                    class="text-slate-800 dark:text-slate-200 transition-colors group-hover:text-slate-200 dark:group-hover:text-slate-600"
+                >
+                    <line x1="8" y1="6" x2="16" y2="12" />
+                    <line x1="8" y1="18" x2="16" y2="12" />
+                </svg>
             </a>
-        </div>
+        </nav>
     </div>
 
-    {% set sliderjs %} {% include "js/scene-slider.js" %} {% endset %}
-    <script>
-        {{ sliderjs | jsmin | safe }}
-    </script>
-
-    {% set viewerjs %} {% include "js/scene-viewer.js" %} {% endset %}
-    <script>
-        {{ viewerjs | jsmin | safe }}
-    </script>
-
 {% endblock %}
-
-{% set navjs %} {% include "js/toggle-nav.js" %} {% endset %}
-<script>
-    {{ navjs | jsmin | safe }}
-</script>

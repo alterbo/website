@@ -10,16 +10,13 @@ date: 2024-08-31
 description: Some of classic CSS.
 image:
     text: Breasts floating following the sea and css
-    url: assets/images/classic-css
 layout: layouts/templates/sequence.njk
 length: 4
 locale: en
 tags: en_items
-thumb:
-    text: Breasts floating following the sea and css
-    url: assets/images/thumb-classic-css
 subtitle: Some CSS properties we shouldn't forget.
 title: Classic CSS
+path: M800 132.3c-1.6 0-.7 45.8 0 68.7H0C2.8 163-6.3 98.9 51.3 66c38.5-22 111.3-19.3 125.5-19-36.9 5.3-46.6 24-40.4 43.5M800 132.3c-24.8-6.8-45.5-12.2-59.5-17.4m59.5 17.4c-32-11-25.7-22-18.5-26.3-20.4 0-35.8 6-41 9M136.4 90.4c5 15.7 20.4 31.9 40.4 41.8.1.1 7.8-18.2 28.2-39.3m-68.6-2.5c4.2-9 23.8-27.2 68.6-28-5.8 4.5-14 16.9 0 30.5m0 0c28-29 80-63.5 169.5-63.5.3 0-32.7 32.6-29.4 63.5m0 0c1.6 14.8 11.5 29.2 37.4 39.3-1.6 0 27.4-30.8 88.5-53M345.1 93c9.5-15.3 45.6-46 114.4-46-.5 0-25.5 18.7 11.5 32.3m0 0A391 391 0 0 1 605.2 57c-.6 0-42.1 15.3-46 36m0 0c-2.2 12 8 25.7 46 39.3 2.8 0 17.1-25.8 64.8-41.8M559.2 93A319 319 0 0 1 669 71c0 1-22.5 10.5 1 19.5m0 0A272 272 0 0 1 757 78c-45.4 17.2-44 26.7-16.5 37
 ---
 
 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5" viewBox="0 0 1142 589">

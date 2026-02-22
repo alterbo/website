@@ -1,20 +1,41 @@
 {% extends 'layouts/base/base.njk' %}
 
-{% if locale === 'es' %}
-    {% set title = 'Sitio de Alberto Ferrero' %}
-{% endif %}
-{% if locale === 'en' %}
-    {% set title = 'Site of Alberto Ferrero' %}
-{% endif %}
-
-{% block nav %}
-    <div class="flex justify-end p-4 relative z-50">
-        <div class="grid place-items-end">
-            {% include 'layouts/components/menu-button.njk' %}
+{% block header %}
+    <div class="fold grid gap-y-8 xs:gap-12 xs:grid-cols-3">
+        <div class="banner pt-10 xs:justify-self-end">
+            {% include 'layouts/components/banner.njk' %}
+            <hr class="relative bottom-8 -z-10 xs:hidden" />
         </div>
+        <hgroup class="heading justify-self-center px-7 xs:px-0 xs:justify-self-start xs:self-end">
+            <h1 class="leading-tight mb-7">
+                <span class="block font-primary text-6xl md:text-7xl lg:text-9xl">{{ 'homepage.titlefirst' | t(locale) }}</span>
+                <span class="block font-primary text-4xl md:text-5xl lg:text-7xl">{{ 'homepage.titlesecond' | t(locale) }}</span>
+            </h1>
+            <p class="mt-4 text-2xl font-secondary">{{ 'homepage.subtitle' | t(locale) }}</p>
+        </hgroup>
+        <div class="self-center content px-7 text-lg xs:px-0">
+            <p>{{ 'homepage.customheading' | t(locale) }}</p>
+            <p class="max-w-[30ch]">{{ 'homepage.customtext' | t(locale) }}</p>
+        </div>
+        <h2 id="settings-label" class="aside-header border-t justify-self-start pl-7 pt-3 text-2xl mt-7 xs:mt-0 xs:justify-self-stretch xs:self-start xs:text-right">
+            {{ 'Settings' if locale == 'en' else 'Configuración' }}
+        </h2>
+        <aside aria-labelledby="settings-label" class="aside border-t justify-self-end xs:mt-[calc(3.5rem+1px)] pt-10 pr-7 text-lg xs:justify-self-stretch">
+            {% include 'layouts/base/settings.njk' %}
+        </aside>
     </div>
 {% endblock %}
 
 {% block main %}
-    {% include 'layouts/templates/flying-laptop.njk'%}
+    <div class="py-32">
+        {% include 'layouts/components/categories-nav.njk' %}
+    </div>
+    <div class="grid grid-cols-2 mb-32">
+        <div class="col-span-2 max-w-64 pb-3 justify-self-center">
+            {% include 'layouts/components/alberto-typing.njk' %}
+        </div>
+        <hr />
+    </div>
+    {% include 'layouts/base/collections-by-category.njk' %}
+    {% include 'layouts/components/footer.njk' %}
 {% endblock %}

@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="{{ locale | default('en') }}"
+  data-age="{{ age | default('items') }}"
+  data-animations="{{ animations | default('on') }}"
+>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?Merriweather:wght@700&display=swap&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+    <title>{{ title }} | Alberto Ferrero</title>
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+    <script type="module" src="{{ '/assets/js/main.js' | url }}"></script>
 </head>
 <body>
-    {% set js %} {% include "js/global.js" %} {% endset %}
-    <script>
-        {{ js | jsmin | safe }}
-    </script>
-    {% block skiplink %}
-    {% endblock %}
-    <div class="grid grid-rows-pink-floyd h-full">
-        <header>
-            {% block nav %}
-            {% endblock %}
-        </header>
-        <main id="main-content" tabIndex="-1">
-            {% block main %}
-            {% endblock %}
-        </main>
-    </div>
+    <main>
+        {% block header %}
+        {% endblock %}
+        
+        {% block main %}
+        {% endblock %}
+    </main>
 </body>
 </html>

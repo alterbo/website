@@ -20,8 +20,3 @@
     {% endfor %}
   </ul>
 </div>
-
-{% set js %} {% include "js/collection-params.js" %} {% endset %}
-<script>
-    {{ js | jsmin | safe }}
-</script>

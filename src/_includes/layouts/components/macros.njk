@@ -22,7 +22,7 @@
         </div>
         <div>
             <h2 class="border-b-2 border-slate-200 hover:border-slate-400 inline-block mb-1 mt-3 pb-1 text-3xl dark:border-slate-700 dark:hover:border-slate-600">
-                <a class="font-serif linkon dark:text-slate-100" href="#" params-handler="{{ url }}">{{ title }}</a>
+                <a class="font-primary linkon dark:text-slate-100" href="{{ url }}">{{ title }}</a>
             </h2>
             <p class="p-0 my-2 dark:text-slate-200">{{ description }}</p>
             <p class="p-0 my-2 dark:text-slate-200">{{ category }}, <time datetime="{{ date }}">{{ date | asPostDate(locale) }}</time></p>
@@ -54,7 +54,7 @@
         </div>
         <div>
             <h2 class="border-b-2 border-slate-200 hover:border-slate-400 inline-block mb-1 mt-3 pb-1 text-3xl dark:border-slate-700 dark:hover:border-slate-600">
-                <a class="font-serif linkon dark:text-slate-100" href="{{ url }}" target="_blank">
+                <a class="font-primary linkon dark:text-slate-100" href="{{ url }}" target="_blank">
                     <span class="mr-3">{{ title }}</span>
                     <svg class="align-top inline mt-2 dark:fill-slate-200" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" height="20" width="20" viewBox="0 0 24 24"><path d="M14 4H1v18h20V11h1v12H0V3h14v1zm10 5h-1V2.707L11.354 14.354l-.708-.708L22.293 2H16V1h8v8z"/></svg>
                 </a>
@@ -65,9 +65,40 @@
     </article>
 {% endmacro %}
 
+{% macro itemCard(item, locale) %}
+<article class="grid gap-3 grid-rows-[auto_1fr_1fr] w-full" aria-labelledby="heading-{{ item.data.title | slug }}">
+    <div class="px-7 xs:px-12">
+        <date-range data-date="{{ item.date }}" data-locale="{{ locale }}" data-title="{{ item.data.title }}"></date-range>
+    </div>
+    <div class="flex mb-3 vector-bg">
+        <svg viewBox="0 0 800 200" class="w-full h-auto vector" role="img" aria-label="{{ item.data.title }}">
+            <rect class="solid" width="800" height="200" fill="currentColor"></rect>
+            <g aria-hidden="true">
+                {% if item.data.path %}
+                    <path class="shape solid" d="{{ item.data.path }}" />
+                {% else %}
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="42" fill="currentColor">{{ item.data.title }}</text>
+                {% endif %}
+            </g>
+        </svg>
+    </div>
+    <div class="mb-10 px-7 xs:px-12">
+        <h3 id="heading-{{ item.data.title | slug }}" class="mb-3 text-2xl xs:text-3xl">
+            <a href="{% if item.data.category === 'App' %}{{ item.data.url }}{% else %}{{ item.url }}{% endif %}" {% if item.data.category === 'App' %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                {{ item.data.title }}
+                {% if item.data.category === 'App' %}
+                    <svg class="align-top inline mx-2 mt-2 icon" fill="none" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24"><path d="M14 4H1v18h20V11h1v12H0V3h14v1zm10 5h-1V2.707L11.354 14.354l-.708-.708L22.293 2H16V1h8v8z"/></svg>
+                {% endif %}
+            </a>
+        </h3>
+        {% if item.data.description %}<p class="text-slate-700 dark:text-slate-200">{{ item.data.description }}</p>{% endif %}
+    </div>
+</article>
+{% endmacro %}
+
 {% macro itemCast(cast) %}
-    <h3 class="text-slate-800 dark:text-slate-200">Cast:</h3>
-    <ul  class="text-slate-800 dark:text-slate-200">
+    <h2 class="font-primary text-xl md:text-3xl">Cast:</h2>
+    <ul class="text-slate-800 dark:text-slate-200">
         {% for item in cast %}
             <li>{{ item }}</li>
         {% endfor %}
@@ -75,25 +106,23 @@
 {% endmacro %}
 
 {% macro itemFooter(date, locale) %}
-    <footer class="p-4 max-w-screen-xl mx-auto my-10">
-        <div class="border-2 border-double border-slate-200 p-4 dark:border-slate-700">
-            <p class="font-serif dark:text-slate-200">
-                {{ 'Created on' if locale == 'en' else 'Creado el' }}
-                <time datetime="{{ date }}">{{ date | asPostDate(locale) }}</time>
-                {{ 'by' if locale === 'en' else 'por' }} Alberto Ferrero.
-            </p>
-        </div>
+    <footer>
+        <p class="font-primary dark:text-slate-200">
+            {{ 'Created on' if locale == 'en' else 'Creado el' }}
+            <time datetime="{{ date }}">{{ date | asPostDate(locale) }}</time>
+            {{ 'by' if locale === 'en' else 'por' }} Alberto Ferrero.
+        </p>
     </footer>
 {% endmacro %}
 
 {% macro itemTitle(title) %}
-    <h1 class="font-serif max-w-screen-xl mx-auto text-3xl text-slate-800 dark:text-slate-200 md:text-7xl md:pb-12 pb-7 px-4 pt-10">
+    <h1 class="font-primary text-3xl md:text-7xl">
         {{ title }}
     </h1>
 {% endmacro %}
 
 {% macro itemSubtitle(title) %}
-    <p class="font-serif max-w-screen-xl mx-auto text-xl text-slate-800 dark:text-slate-200 pb-7 px-4 pt-0">
+    <p class="font-primary text-lg text-slate-800 dark:text-slate-200 md:text-xl">
         {{ title }}
     </p>
 {% endmacro %}

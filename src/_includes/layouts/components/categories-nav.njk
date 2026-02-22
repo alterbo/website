@@ -1,0 +1,30 @@
+{% set categories = site.categories %}
+{# Initialize running total for all category items #}
+{% set total = 0 %}
+<nav aria-label="{{ 'Categories' if locale == 'en' else 'Categorías' }}">
+  <ul class="text-lg">
+    {% for category in categories %}
+      {% if category.value != 'all' %}
+        {# Build collection name: locale_age_category #}
+        {% set collectionName = locale + '_' + age + '_' + category.value %}
+        {% set count = (collections[collectionName] | length) %}
+        {% set total = total + count %}
+        <li class="grid grid-cols-[1fr_2.1fr] gap-x-7 items-center mb-3 xs:gap-x-12">
+          <div class="flex justify-end">{{ count }}</div>
+          <div class="flex justify-between items-end gap-3">
+            <a class="pr-3 py-1 text-slate-800 dark:text-slate-100 dark:border-slate-600 hover:border-slate-500" href="#{{ category.value }}">
+              {{ ('category.' + category.value) | t(locale) }}
+            </a>
+            <hr class="w-full" />
+          </div>
+        </li>
+      {% endif %}
+    {% endfor %}
+    <li class="grid grid-cols-[1fr_2.1fr] gap-x-7 mt-3 pt-3 xs:gap-x-12">
+      <div>
+        <hr class="w-full" />
+        <div class="justify-self-end py-3">{{ total }}</div>
+      </div>
+    </li>
+  </ul>
+</nav>

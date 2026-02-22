@@ -1,0 +1,363 @@
+@import "tailwindcss";
+@import './banner.css';
+@import './scene.css';
+
+@font-face {
+    font-family: "Instrument Sans";
+    src: url("/assets/fonts/InstrumentSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Instrument Sans";
+    src: url("/assets/fonts/InstrumentSans-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Playfair Display";
+    src: url("/assets/fonts/PlayfairDisplay-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: optional;
+}
+
+@theme {
+    --grid-template-columns-lol: 33vw auto 1fr;
+    --grid-template-rows-lol: 100px auto;
+    --grid-template-rows-nonlol: auto;
+    --grid-template-rows-pink-floyd: repeat(2, auto 1fr);
+    --max-width-settings-full: calc(100vw - 3.5rem - 4px);
+    --min-height-full-moon: calc(100svh - 4rem);
+    --breakpoint-xs: 36rem;
+    --card-size: 460px;
+    --auto-grid: repeat(auto-fill, minmax(min(var(--card-size, 460px), 100%), 1fr));
+    --auto-grid-related: repeat(auto-fit, minmax(min(var(--card-size, 460px), 100%), 1fr));
+}
+
+:root {
+  --color-bg: #f1f1f1;
+  --color-border: #252525;
+  --color-text: #1c1c1c;
+  --color-link: #1C426F;
+  --color-link-hover-bg: #1C426F;
+  --color-link-hover-text: #f1f1f1;
+  --color-surface: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1c1c1c;
+    --color-border: #f1f1f1;
+    --color-text: #f1f1f1;
+    --color-link: #90caf9;
+    --color-link-hover-bg: #90caf9;
+    --color-link-hover-text: #1C426F;
+    --color-surface: #282828;
+  }
+}
+
+html:not([data-animations="off"]) {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: serif;
+}
+
+html.fonts-loaded body {
+    font-family: "Instrument Sans", sans-serif;
+}
+
+html.fonts-loaded h1, html.fonts-loaded h2, html.fonts-loaded h3,
+html.fonts-loaded h4, html.fonts-loaded h5, html.fonts-loaded h6 {
+    font-family: "Playfair Display", serif;
+}
+
+a {
+    color: var(--color-link);
+    border-bottom: 1px dashed var(--color-border);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+
+    .icon {
+        stroke: var(--color-link);
+    }
+
+    &:hover,
+    &:focus-visible {
+        background: var(--color-link-hover-bg);
+        border-bottom-color: transparent;
+        color: var(--color-link-hover-text);
+        outline: none;
+
+        .icon {
+            stroke: var(--color-link-hover-text);
+        }
+    }
+}
+
+p {
+    line-height: 1.5;
+    & + p {
+        margin-top: 1rem;
+    }
+}
+
+.item-contents p:first-of-type {
+    &::first-letter {
+        background-color: var(--color-surface);
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        font-size: 2.5rem;
+        line-height: 1;
+        color: var(--color-text);
+        float: left;
+        margin-inline-end: 0.5rem;
+        margin-block-start: -1rem;
+        padding: 1rem;
+
+        @media (width >= 36rem) {
+            font-size: 4.25rem;
+            line-height: 0.9;
+            margin-inline-end: 1rem;
+            margin-block-start: -2.5rem;
+            padding: 2rem;
+        }
+    }
+}
+
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+article ul {
+    margin: 1rem 0;
+}
+
+article ul li:before {
+    content: "▪";
+    color: lightgray;
+    padding-right: 0.5rem;
+    font-size: larger;
+}
+
+fieldset > legend {
+    white-space: nowrap;
+}
+
+hr {
+    color: var(--color-text);
+}
+
+.vector {
+    inline-size: 100%;
+    vector-effect: non-scaling-stroke;
+
+    .solid {
+        fill: var(--color-surface);
+    }
+    .surface {
+        fill: var(--color-text);
+    }
+    .shape {
+        stroke: var(--color-text);
+        stroke-width: 1px;
+    }
+    .border-secondary {
+        stroke: var(--color-surface);
+    }
+
+    @media (prefers-color-scheme: dark) {
+    }
+
+    &:has(.vector-wrapper) {
+        background-color: var(--color-surface);
+        padding: 1rem;
+
+        .shape {
+            fill: none;
+        }
+    }
+}
+
+.vector-bg {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+}
+
+:is(.fold, .fold-list-item) {
+    display: grid;
+}
+
+.fold {
+    @media (width >= 36rem) {
+        grid-template-areas:
+        "banner heading heading"
+        "banner content content"
+        "aside-header aside aside";
+    }
+}
+
+.fold-list-item {
+    @media (width >= 36rem) {
+        grid-template-areas:
+            "counter divider divider";
+    }
+}
+
+.banner {
+    hr {
+        bottom: 2rem;
+        position: relative;
+        z-index: -1;
+    }
+    @media (width >= 36rem) {
+        grid-area: banner;
+
+        hr {
+            display: none;
+        }
+    }
+}
+
+.heading {
+    @media (width >= 36rem) {
+        grid-area: heading;
+    }
+}
+.content {
+    @media (width >= 36rem) {
+        grid-area: content;
+    }
+}
+.aside {
+    @media (width >= 36rem) {
+        grid-area: aside;
+    }
+}
+.aside-header {
+    @media (width >= 36rem) {
+        grid-area: aside-header;
+    }
+}
+
+.banner-moustache {
+    max-block-size: 30svh;
+    @media (width >= 36rem) {
+        max-block-size: 50svh;
+    }
+}
+
+scene-viewer {
+    p {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        position: relative;
+        z-index: 100;
+    }
+    svg {
+        inline-size: 100%;
+        block-size: 100%;
+        inset: 0;
+        position: absolute;
+    }
+
+    .z-one {
+        z-index: 1;
+    }
+    .z-two {
+        z-index: 2;
+    }
+    .z-three {
+        z-index: 3;
+    }
+}
+
+.typing {
+    :is(.motion-one, .motion-two, .motion-three) {
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+    .motion-one {
+        animation-duration: 2.5s;
+        animation-name: typing-motion-one;
+    }
+    .motion-two {
+        animation-duration: 2s;
+        animation-name: typing-motion-two;
+    }
+    .motion-three {
+        animation-duration: 1.5s;
+        animation-name: typing-motion-three;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .typing .motion-one,
+    .typing .motion-two,
+    .typing .motion-three {
+        animation: none !important;
+    }
+}
+
+html[data-animations="off"] .typing .motion-one,
+html[data-animations="off"] .typing .motion-two,
+html[data-animations="off"] .typing .motion-three {
+    animation: none !important;
+}
+
+.svg-button path {
+    fill: none;
+}
+
+.mirror {
+    transform: scaleX(-1);
+}
+
+@keyframes typing-motion-one {
+    0%, 100% {
+        rotate: 0deg;
+    }
+    50% {
+        rotate: 0.25deg;
+    }
+}
+@keyframes typing-motion-two {
+    0%, 100% {
+        rotate: 0deg;
+    }
+    50% {
+        rotate: 0.5deg;
+    }
+}
+@keyframes typing-motion-three {
+    0%, 100% {
+        rotate: 0deg;
+    }
+    50% {
+        rotate: 0.75deg;
+    }
+}

@@ -1,0 +1,25 @@
+{% from 'layouts/components/macros.njk' import itemCard %}
+
+{% for category in site.categories %}
+  {% set categoryKey = category.value %}
+  {% set items = collections[locale + '_' + age + '_' + categoryKey] %}
+  {% if items and items.length %}
+    <section id="{{ categoryKey }}" class="mb-16">
+      <div class="inline-grid my-10">
+        <h2 class="font-primary mb-10 text-3xl pl-7 xs:pl-12">
+          {{ ('category.' + categoryKey) | t(locale) }}
+        </h2>
+        <hr />
+      </div>
+      <ul class="gap-y-7 grid grid-cols-[var(--auto-grid)] w-full">
+        {% for item in items | reverse %}
+          {% if item.data.title %}
+            <li class="flex">
+              {{ itemCard(item, locale) }}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+{% endfor %}

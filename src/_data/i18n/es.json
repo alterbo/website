@@ -1,0 +1,56 @@
+{
+  "site": {
+    "name": "Sitio de Alberto Ferrero"
+  },
+  "settings": {
+    "title": "Configuración",
+    "language": "Idioma",
+    "motion": "Movimiento",
+    "parental": "Control parental",
+    "category": "Categoría"
+  },
+  "locale": {
+    "en": "En",
+    "es": "Es"
+  },
+  "category": {
+    "app": "App",
+    "comic": "Cómic",
+    "poetry": "Poesía",
+    "tale": "Cuento"
+  },
+  "kids": {
+    "label": "Infantil"
+  },
+  "animations": {
+    "label": "Animaciones"
+  },
+  "story": {
+    "start": "Comenzar historia",
+    "navigation": "Navegación de la historia",
+    "previous": "Página anterior",
+    "next": "Página siguiente",
+    "pageOf": "Página {{current}} de {{total}}"
+  },
+  "homepage": {
+    "title": "La página de inicio",
+    "titlefirst": "La",
+    "titlesecond": "Página de inicio",
+    "subtitle": "de Alberto Ferrero",
+    "customheading": "Esta es la página de inicio, un lugar tranquilo.",
+    "customtext": "Aquí podrás encontrar todo, o nada, o la página de inicio."
+  },
+  "item": {
+    "alttext": "Texto alternativo",
+    "category": "Categoría",
+    "info": "Info",
+    "gohome": "Ir a la página de inicio",
+    "related": "Más en este sitio"
+  },
+  "scene": {
+    "navigatebacktoitempage": "Volver a la página del ítem"
+  },
+  "sequence": {
+    "enter": "Entrar"
+  }
+}

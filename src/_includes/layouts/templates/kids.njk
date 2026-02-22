@@ -27,7 +27,7 @@
 {% block main %}
     <div class="p-3 md:p-6 mb-10">
         <hgroup class="max-w-screen-xl mx-auto">
-            <h1 class="font-serif mb-3 text-4xl text-slate-400 dark:text-slate-600">
+            <h1 class="font-primary mb-3 text-4xl text-slate-400 dark:text-slate-600">
                 {% if locale === 'en' %}
                     Menu
                 {% endif %}
@@ -36,7 +36,7 @@
                 {% endif %}
             </h1>
             <div class="mb-10 text-l text-slate-700 dark:text-slate-300">
-                {{ content | safe}}
+                {{ content | sanitizeHtml | safe }}
             </div>
         </hgroup>
         {% include 'layouts/base/collection.njk' %}

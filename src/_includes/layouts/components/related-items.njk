@@ -1,0 +1,23 @@
+{% from 'layouts/components/macros.njk' import itemCard %}
+
+{% set safeAge = age | default('items') %}
+{% set loc = locale | lower %}
+{% set merged = collections | mergeCollections(loc, safeAge) %}
+{% set recByCat = recommendations[loc] | default({}) %}
+{% set related = merged | sampleRelated(recByCat, page.url, 3) %}
+
+{% if related and related.length %}
+<section class="gap-10 grid">
+    <div class="inline-grid justify-self-start">
+        <hr />
+        <h2 class="font-primary mt-10 text-2xl pl-7 xs:pl-12 xs:text-3xl">{{ 'item.related' | t(locale) }}</h2>
+    </div>
+    <ul class="gap-y-7 grid grid-cols-[var(--auto-grid-related)] w-full">
+      {% for item in related %}
+      <li class="flex">
+        {{ itemCard(item, locale) }}
+      </li>
+      {% endfor %}
+    </ul>
+</section>
+{% endif %}

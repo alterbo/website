@@ -3,15 +3,12 @@ age: items
 category: Cuento
 date: 2024-10-27
 image:
-    text: Puesto de trabajo casero con taza de café 
-    url: assets/images/friday-deployment
+    text: Trabajo de oficina con taza de café
 layout: layouts/templates/item.njk
 locale: es
 tags: es_items
-thumb:
-    text: Puesto de trabajo casero con taza de café 
-    url: assets/images/thumb-friday-deployment
 title: El despliegue del viernes
+path: M165.5 137.5c62.5 4 200.6 16.7 253 35.5 17.7 5.2 68.1 18.3 70.5 27.5m-323.5-100c53.2.8 170.9-3.3 216.5-26.5m-219 27 186.5 20C383 123.5 549 153 549 203c0 20 .3 36.5 0 23.5m-168-153 186.5 20c33.5 2.5 97.5 32 97.5 82 0 20 .3 36.5 0 23.5m-246-25.5V200m0-200v77.5M0 64c139.5 3.2 418.5-5.3 418.5-64.5M0 45.5c120.7 2.2 368.4-4 394-46
 ---
 
 En la documentación del proyecto alguien, unknown user, había añadido una historia sobre el despliegue a producción que tuvo lugar durante el pasado viernes, el día del terremoto.

@@ -1,0 +1,56 @@
+{
+  "site": {
+    "name": "Site of Alberto Ferrero"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "motion": "Motion",
+    "parental": "Parental control",
+    "category": "Category"
+  },
+  "locale": {
+    "en": "En",
+    "es": "Es"
+  },
+  "category": {
+    "app": "App",
+    "comic": "Comic",
+    "poetry": "Poetry",
+    "tale": "Tale"
+  },
+  "kids": {
+    "label": "Kids"
+  },
+  "animations": {
+    "label": "Animations"
+  },
+  "story": {
+    "start": "Start story",
+    "navigation": "Story navigation",
+    "previous": "Previous page",
+    "next": "Next page",
+    "pageOf": "Page {{current}} of {{total}}"
+  },
+  "homepage": {
+    "title": "The Homepage",
+    "titlefirst": "The",
+    "titlesecond": "Homepage",
+    "subtitle": "of Alberto Ferrero",
+    "customheading": "This is the homepage, a quiet place.",
+    "customtext": "You may find here everything you need, or nothing, or the homepage."
+  },
+  "item": {
+    "alttext": "Alt text",
+    "category": "Category",
+    "info": "Info",
+    "gohome": "Go to homepage",
+    "related": "From around the site"
+  },
+  "scene": {
+    "navigatebacktoitempage": "Navigate back to item page"
+  },
+  "sequence": {
+    "enter": "Enter"
+  }
+}

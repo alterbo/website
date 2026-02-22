@@ -3,16 +3,14 @@ age: items
 category: Cuento
 date: 2024-07-21
 image:
-    text: Puesto de trabajo de oficina pradera 
-    url: assets/images/the-nicht
+    text: Una pradera mínima con una conversión en el cielo
 layout: layouts/templates/item.njk
 locale: es
 tags: es_items
-thumb:
-    text: Puesto de trabajo de oficina pradera 
-    url: assets/images/thumb-the-nicht
 title: El Nicht
+path: M312.1 59.5h116.1M0 167.2a639 639 0 0 1 266.7 0c133.3 28.2 177.7 18.8 266.6 0a639 639 0 0 1 266.7 0m-509.5-155h189a16 16 0 0 1 16.2 16.3v64.8a16 16 0 0 1-16.2 16.2H355.3l-29.7 24.3 8.1-24.4h-43.2a16 16 0 0 1-16.2-16.2V28.6a16 16 0 0 1 16.2-16.2m145.8 36.5h18.9a4 4 0 0 1 4 4v13.6a4 4 0 0 1-4 4h-18.9a4 4 0 0 1-4-4V52.8a4 4 0 0 1 4-4.1
 ---
+
 
 Mi carrera como desarrollador de software comenzó en una empresa austriaca ubicada en el corazón de nuestro viejo continente. El idioma corporativo de la empresa era el inglés. El código, la documentación. Todo estaba en inglés, pero los jefes hablaban entre ellos en alemán. Deutsch. Hay que decirlo con disciplina, asegurándose de vocalizar cada una de las letras, especialmente el final. Deutsch. Tantas consonantes juntas aguardando en fila para ser mencionadas. Palabras largas como desiertos en ese idioma, conjugaciones y un orden diferente, eso es el Deutsch, amigos.
 

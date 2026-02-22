@@ -1,46 +1,55 @@
 {% extends 'layouts/base/base.njk' %}
 
-{% from 'layouts/components/macros.njk' import itemCast, itemFooter, itemSubtitle, itemTitle %}
+{% from 'layouts/components/macros.njk' import itemCast, itemFooter, itemTitle, itemSubtitle %}
 
-{% block nav %}
-    <div class="flex justify-between p-4" id="nav">
+{% block header %}
+    <div class="flex justify-center">
         {% include 'layouts/components/home-button.njk' %}
-        {% include 'layouts/components/menu-button.njk' %}
     </div>
 {% endblock %}
 
 {% block main %}
-    <article>
-        <hgroup>
-            {{ itemTitle(title) }}
-            {{ itemSubtitle(subtitle) }}
-        </hgroup>
-        {% if cast %}
-            <section class="max-w-screen-xl mx-auto px-4">
-                {{ itemCast(cast) }}
-            </section>
-        {% endif %}
-        <section class="border-2 border-double border-slate-200 grid grid-flow-row h-full items-center justify-center m-4 p-4 dark:border-slate-700">
-            <div class="bg-white h-[30vh]">
-                {{ content | safe }}
+    <article class="mb-20 mt-10">
+        <div class="gap-10 grid *:gap-3 *:grid xs:*:gap-10">
+            <div class="gap-10 grid justify-start pl-7 text-slate-800 xs:pl-10 dark:text-slate-200">
+                {{ itemTitle(title) }}
+                {{ itemSubtitle(subtitle) }}
             </div>
-            <div class="flex justify-center p-7">
-                <a class="border border-slate-400 brutton m-3 p-3 text-center text-xl dark:border-slate-600" id="start-button"/>
-                    <span class="border-b-2 border-transparent text-slate-800 dark:text-slate-200 hover:border-slate-200 dark:hover:border-slate-800">{{ 'Go' if locale === 'en' else 'Entrar' }}</span>
-                </a>
+            <aside class="grid-cols-[2rem_1fr] xs:grid-cols-[1fr_2fr]">
+                <hr />
+                <div class="gap-10 grid">
+                    <div class="mt-3 xs:mt-10">
+                        {{ itemCast(cast) }}
+                    </div>
+                    <div class="gap-7 grid grid-cols-[auto_1fr] items-end">
+                        <a
+                            id="start-button"
+                            class="px-7 py-3 text-xl"
+                            href="1/"
+                            aria-label="{{ 'Start story' if locale === 'en' else 'Comenzar historia' }}"
+                        >
+                            {{ 'sequence.enter' | t(locale) }}
+                        </a>
+                        <hr />
+                    </div>
+                    {{ itemFooter(date, locale) }}
+                </div>
+            </aside>
+            <div class="grid-cols-[2rem_1fr] xs:grid-cols-[1fr_4fr]">
+                <hr />
+                <svg viewBox="0 0 800 200" class="py-3 w-full h-auto vector xs:py-10" role="img" aria-label="{{ item.data.title }}">
+                    <rect class="solid" width="800" height="200" fill="currentColor"></rect>
+                    <g>
+                        {% if path %}
+                            <path class="shape solid" d="{{ path }}" />
+                        {% else %}
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="42" fill="currentColor">{{ title }}</text>
+                        {% endif %}
+                    </g>
+                </svg>
             </div>
-        </section>
-        {{ itemFooter(date, locale) }}
+        </div>
     </article>
-
-    {% set sequencejs %} {% include "js/sequence-params.js" %} {% endset %}
-    <script>
-        {{ sequencejs | jsmin | safe }}
-    </script>
-
+    {% include 'layouts/components/related-items.njk' %}
+    {% include 'layouts/components/footer.njk' %}
 {% endblock %}
-
-{% set navjs %} {% include "js/toggle-nav.js" %} {% endset %}
-<script>
-    {{ navjs | jsmin | safe }}
-</script>

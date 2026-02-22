@@ -3,15 +3,12 @@ age: items
 category: Tale
 date: 2020-12-26
 image:
-    text: city at sunset
-    url: assets/images/poetria
+    text: Some symbols together meaning nothing
 layout: layouts/templates/item.njk
 locale: en
 tags: en_items
-thumb:
-    text: city at sunset
-    url: assets/images/thumb-poetria
 title: Poetría
+path: M363.3 100H39m377.7 0h340.8M390 73.3V30m0 96.7V170m27-70a27 27 0 1 1-54 0 27 27 0 0 1 54 0m-352 0a27 27 0 1 1-54 0 27 27 0 0 1 54 0m719 0a27 27 0 1 1-54 0 27 27 0 0 1 54 0M410 30a20 20 0 1 1-40 0 20 20 0 0 1 40 0m0 140a20 20 0 1 1-40 0 20 20 0 0 1 40 0
 ---
 
 Sam Sullivan flirted with StackOverflow, fixing errors for developers and then inviting them to dinner.
