@@ -25,16 +25,30 @@ class SceneViewer extends HTMLElement {
       `;
       
       this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
+      this.decorateSlotted = this.decorateSlotted.bind(this);
     }
-  
-    connectedCallback() {
+
+    decorateSlotted() {
       const slot = this.shadowRoot.querySelector('slot');
       const slottedElements = slot.assignedElements();
+      const multi = slottedElements.length > 1;
       slottedElements.forEach((el, index) => {
-          if (el.tagName.toLowerCase() === 'svg' && slottedElements.length > 1) {
-              el.classList.add(index === 0 ? 'background' : 'foreground');
-          }
+        if (el.tagName.toLowerCase() === 'svg' && multi) {
+          el.classList.toggle('background', index === 0);
+          el.classList.toggle('foreground', index !== 0);
+        }
       });
+    }
+
+    connectedCallback() {
+      const slot = this.shadowRoot.querySelector('slot');
+      this.decorateSlotted();
+      slot.addEventListener('slotchange', this.decorateSlotted);
+    }
+
+    disconnectedCallback() {
+      const slot = this.shadowRoot?.querySelector('slot');
+      slot?.removeEventListener('slotchange', this.decorateSlotted);
     }
 
   }

@@ -10,7 +10,7 @@ export function initSceneSlider() {
   const pageIndicator = document.getElementById('scene-page');
   const pageIndicatorNumber = document.getElementById('scene-page-number');
 
-  const SWIPE_THRESHOLD_X = 56; // px
+  const SWIPE_THRESHOLD_X = 56;
   const HORIZONTAL_DOMINANCE_RATIO = 1.2;
 
   const swipeTarget = document.querySelector('scene-viewer') || document.body;

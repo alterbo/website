@@ -97,6 +97,7 @@ a {
         stroke: var(--color-link);
     }
 
+    &:active,
     &:hover,
     &:focus-visible {
         background: var(--color-link-hover-bg);
