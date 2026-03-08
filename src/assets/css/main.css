@@ -39,23 +39,27 @@
 
 :root {
   --color-bg: #f1f1f1;
+  --color-bg-light: #f1f1f1;
   --color-border: #252525;
   --color-text: #1c1c1c;
   --color-link: #1C426F;
   --color-link-hover-bg: #1C426F;
   --color-link-hover-text: #f1f1f1;
   --color-surface: #fff;
+  --color-surface-light: #e5e5e5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #1c1c1c;
+    --color-bg-light: #f5f5f5;
     --color-border: #f1f1f1;
     --color-text: #f1f1f1;
     --color-link: #90caf9;
     --color-link-hover-bg: #90caf9;
     --color-link-hover-text: #1C426F;
     --color-surface: #282828;
+    --color-surface-light: #3a3a3a;
   }
 }
 

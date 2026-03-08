@@ -4,14 +4,11 @@ category: Tale
 date: 2023-10-07
 image:
     text: A house in the middle of the living room
-    url: assets/images/the-house-infinite
 layout: layouts/templates/item.njk
 locale: en
 tags: en_kids
-thumb:
-    text: A house in the middle of the living room
-    url: assets/images/thumb-the-house-infinite
 title: The house infinite
+path: M271 200h260m-195-41q1 0 1-1v-9q0-1-1-1h-42a1 1 0 0 0-1 1v9q0 1 1 1m42 0h-42m42 0q1 0 1 1v39q0 1-1 1h-42a1 1 0 0 1-1-1v-39q0-1 1-1m3-11v11m4-9v9m-4-24v11m4-9v9m-4-24v11m4-9v9m-4-24v11m4-9v9m-4-24v11m4-9v9m207 52q1 0 1-1v-9q0-1-1-1h-42a1 1 0 0 0-1 1v9q0 1 1 1m42 0h-42m42 0q1 0 1 1v39q0 1-1 1h-42a1 1 0 0 1-1-1v-39q0-1 1-1m35-11v11m-4-9v9m4-24v11m-4-9v9m4-24v11m-4-9v9m4-24v11m-4-9v9m4-24v11m-4-9v9m-194 55v35m10-35v35m10-35v35m4-35v35m148-35v35m10-35v35m10-35v35m4-35v35M349 93q6-31 40-45m-28 44a74 74 0 0 1 35-42m57 43q-6-31-40-45m28 44a74 74 0 0 0-35-42m-15-12a26 26 0 0 1 20 0m-118 80q6-6 2-10-6-4-2-12 2-10 44 0 4-48 64-60 60 12 64 60 42-10 44 0 4 8-2 12-4 4 2 10m-132 42v40h22v-44h-18m-4 4q0-4 4-4m-4 4q2-4 4-4m0 0h40m0 0q4 0 4 4m-4-4q2 0 4 4m-4-4h-18v44h22v-40m-24-4v44M281 26l-4 14m254-28-4 14M263 58l-4 14m286-24-4 14M255 98l-4 14m298-4-4 14M273 12l-4 14m270 52-4 14m-241 43h42q1 0 1 1v9q0 1-1 1h-42a1 1 0 0 1-1-1v-9q0-1 1-1Zm0-13h42q1 0 1 1v9q0 1-1 1h-42a1 1 0 0 1-1-1v-9q0-1 1-1Zm0-13h42q1 0 1 1v9q0 1-1 1h-42a1 1 0 0 1-1-1v-9q0-1 1-1Zm0-13h42q1 0 1 1v9q0 1-1 1h-42a1 1 0 0 1-1-1v-9q0-1 1-1Zm172 39h42q1 0 1 1v9q0 1-1 1h-42a1 1 0 0 1-1-1v-9q0-1 1-1Zm0-13h42q1 0 1 1v9q0 1-1 1h-42a1 1 0 0 1-1-1v-9q0-1 1-1Zm0-13h42q1 0 1 1v9q0 1-1 1h-42a1 1 0 0 1-1-1v-9q0-1 1-1Zm0-13h42q1 0 1 1v9q0 1-1 1h-42a1 1 0 0 1-1-1v-9q0-1 1-1Zm-66.5 84a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm8 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM312 124h6q1 0 1 1v16q0 1-1 1h-6a1 1 0 0 1-1-1v-16q0-1 1-1Zm172 0h6q1 0 1 1v16q0 1-1 1h-6a1 1 0 0 1-1-1v-16q0-1 1-1Z
 ---
 
 The visitor had not yet arrived.

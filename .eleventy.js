@@ -157,10 +157,11 @@ export default function (eleventyConfig) {
             ]),
             allowedAttributes: {
                 a: ['href', 'name', 'target', 'rel'],
+                clipPath: ['id'],
                 img: ['src', 'alt', 'title', 'width', 'height', 'loading'],
                 svg: ['xmlns', 'xml:space', 'viewBox', 'width', 'height', 'class', 'id', 'aria-hidden'],
-                g: ['class', 'id', 'transform'],
-                path: ['class', 'id', 'd', 'transform', 'fill', 'stroke', 'stroke-width'],
+                g: ['class', 'clip-path', 'id', 'transform'],
+                path: ['class', 'id', 'd', 'transform', 'fill', 'fill-rule', 'clip-rule', 'stroke', 'stroke-width'],
                 circle: ['class', 'id', 'cx', 'cy', 'r', 'transform', 'fill', 'stroke', 'stroke-width'],
                 rect: ['class', 'id', 'x', 'y', 'width', 'height', 'rx', 'ry', 'transform'],
                 line: ['class', 'id', 'x1', 'y1', 'x2', 'y2', 'transform'],

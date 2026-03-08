@@ -1,6 +1,6 @@
 ---
 age: kids
 layout: layouts/templates/home.njk
-locale: es
-title: La página de inicio
+locale: en
+title: The Homepage
 ---

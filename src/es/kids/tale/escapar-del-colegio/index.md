@@ -4,14 +4,11 @@ category: Cuento
 date: 2022-10-07
 image:
     text: Escuela de ciudad con multitud de ventanas
-    url: assets/images/escape-from-school
 layout: layouts/templates/item.njk
 locale: es
 tags: es_kids
-thumb:
-    text: Escuela de ciudad con multitud de ventanas
-    url: assets/images/thumb-escape-from-school
 title: Escapar del colegio
+path: M60.5 170.5V109L128 95v56m235.5 30v-56l46-16v48M734 109H471.5V84H734v-8.5H471.5V54H734v-8H471.5V18.5H759V133h-82.5l-31 18.5h-115l-25-18.5H430V69.5h-87.5V133l-190-2.5V16H167v100.5h27V16h10.5v100.5h26V16h8v100.5H267V16h7.5v100.5H308V16m33-.5V21h91v16h-91v7.5h91v17h-91v-6M24 182l128.5-38 274.5 3-81.5 44z
 ---
 
 Aquel martes de Febrero, escaparon 30 niños del colegio. Estaba nublado y hacía frío, mucho frío. Pero no nevó.

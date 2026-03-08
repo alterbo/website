@@ -3,7 +3,7 @@
 {% block main %}
 
     <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] min-h-[100svh]">
-        <header class="gap-7 flex flex-wrap items-center p-3 xs:px-10">
+        <header class="gap-7 flex items-center p-3 xs:px-10">
             <h1
                 id="scene-heading"
                 class="font-primary mr-auto text-2xl text-slate-800 dark:text-slate-200 xs:text-3xl lg:text-5xl"
@@ -18,7 +18,7 @@
                 aria-live="polite"
                 aria-atomic="true"
             >
-                <span id="scene-page-number">1 / {{ length }}</span>
+                <span class="whitespace-nowrap" id="scene-page-number">1 / {{ length }}</span>
             </p>
             {% include 'layouts/components/close-button.njk' %}
         </header>
@@ -26,6 +26,7 @@
             <scene-viewer
                 animation="{{ animation }}"
                 class="text-lg xs:text-2xl"
+                {% if mode %}data-mode="{{ mode }}"{% endif %}
             >
                 {{ content | sanitizeHtml | safe }}
             </scene-viewer>

@@ -4,8 +4,7 @@
 <nav aria-label="{{ 'Categories' if locale == 'en' else 'Categorías' }}">
   <ul class="text-lg">
     {% for category in categories %}
-      {% if category.value != 'all' %}
-        {# Build collection name: locale_age_category #}
+      {% if category.value != 'all' and age in category.ages %}
         {% set collectionName = locale + '_' + age + '_' + category.value %}
         {% set count = (collections[collectionName] | length) %}
         {% set total = total + count %}

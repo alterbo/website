@@ -4,14 +4,11 @@ category: Cuento
 date: 2024-06-24
 image:
     text: Tablero de ajedrez con fichas amarillas
-    url: assets/images/chess-champion
 layout: layouts/templates/item.njk
 locale: es
 tags: es_kids
-thumb:
-    text: Tablero de ajedrez con fichas amarillas
-    url: assets/images/thumb-chess-champion
 title: El campeón de ajedrez
+path: M367 74.5a19.5 19.5 0 1 1 22.9-6M367 75c-7-3.4-15.5-8.7-15.5-18q-.1-18.4 18.5-23c12.5-3.1 25.5 8.2 25.5 20.5 0 5.2-3 9.8-5.6 13.6m18.6 45.4L383 56c-2-2-7.2-5.5-11.5-3-5.3 3-6.4 8-5.8 10 .4 1.6 3 41.8 2.8 68.5M45 200l42-16m0 0 162-61.5M87 184l169.3-12.4m-7.3-49.1 7.3 49m-7.3-49 118-44.9m-118 44.9 118-21.8m-110.7 70.9 4.2 28.4m-4.2-28.4 115.2-8.5m70.5-114L570 .5l231 20-319.4 59M442 49.1l39.6 30.4M442 49.1l-52.5 20m92.1 10.4 90 68.9m-90-68.9-81.6 15m171.6 53.9L639 200m-67.4-51.6-142.1 10.4m142-10.4L801 131.5M31 54h27V27H31zm0 0 56 129.5M57.5 53 250 122m183 24a34 34 0 1 1-68 0 34 34 0 0 1 68 0Z
 ---
 
 Hola. El otro día vino Lucas a casa, trajo en su mochila unas galletas y un tablero pequeño de ajedrez. Lucas es campeón de ajedrez del colegio y el alumno más aventajado de la extra escolar de ajedrez, de hecho es más aventajado que el profesor.

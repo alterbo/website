@@ -3,15 +3,12 @@ age: kids
 category: Tale
 date: 2022-10-07
 image:
-    text: City school with many windows
-    url: assets/images/escape-from-school
+    text: Abstract school with abstract windows
 layout: layouts/templates/item.njk
 locale: en
 tags: en_kids
-thumb:
-    text: City school with many windows
-    url: assets/images/thumb-escape-from-school
 title: Escape from school
+path: M60.5 170.5V109L128 95v56m235.5 30v-56l46-16v48M734 109H471.5V84H734v-8.5H471.5V54H734v-8H471.5V18.5H759V133h-82.5l-31 18.5h-115l-25-18.5H430V69.5h-87.5V133l-190-2.5V16H167v100.5h27V16h10.5v100.5h26V16h8v100.5H267V16h7.5v100.5H308V16m33-.5V21h91v16h-91v7.5h91v17h-91v-6M24 182l128.5-38 274.5 3-81.5 44z
 ---
 
 That Tuesday in February, 30 children escaped from school. It was cloudy and very cold. But it didn't snow. Some parents say that it was three students from the "Sun" class who first managed to escape from school. Other parents claim that the culprits of the children's escape were two first graders. On the other hand, the secretary and the janitor insist that it was a child from the "Moon" class who devised the plan. The school principal met with the parents of the suspected students, the students themselves, the secretary, and the janitor to solve the mystery. The principal rode her bike to work and was in a bad mood because of the cold, her nose red like Rudolph the reindeer. The mystery had to be solved, as the well-being of the school and the students' learning were at stake, like a ball about to leave the field.

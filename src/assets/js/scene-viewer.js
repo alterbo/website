@@ -9,6 +9,13 @@ class SceneViewer extends HTMLElement {
             height: 100%;
             z-index: auto;
           }
+          :host([data-mode='light']) {
+            .mode-background {
+                background-color: var(--color-bg-light);
+                fill: var(--color-surface);
+                z-index: -1;
+            }
+          }
           #sceneViewer {
             display: grid;
             height: 100%;
@@ -19,7 +26,7 @@ class SceneViewer extends HTMLElement {
           }
         </style>
         
-        <div id="sceneViewer">
+        <div class="mode-background" id="sceneViewer">
             <slot></slot>
         </div>
       `;

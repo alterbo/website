@@ -12,19 +12,23 @@
     "categories": [
         {
             "name": "App",
-            "value": "app"
+            "value": "app",
+            "ages": ["items"]
         },
         {
             "name": "Comic",
-            "value": "comic"
+            "value": "comic",
+            "ages": ["items", "kids"]
         },
         {
             "name": "Poetry",
-            "value": "poetry"
+            "value": "poetry",
+            "ages": ["items"]
         },
         {
             "name": "Tale",
-            "value": "tale"
+            "value": "tale",
+            "ages": ["items", "kids"]
         }
     ],
     "locales": [
