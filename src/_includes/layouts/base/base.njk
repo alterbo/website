@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} | Alberto Ferrero</title>
     <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | url }}">
+    <link rel="alternate" type="application/atom+xml" title="{{ 'feed.subscribe' | t(locale) }}" href="{{ '/' + (locale | default('en')) + '/feed.xml' | url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
     <script type="module" src="{{ '/assets/js/main.js' | url }}"></script>
 </head>

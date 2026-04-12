@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import EleventyVitePlugin from '@11ty/eleventy-plugin-vite';
 import sanitizeHtml from 'sanitize-html';
+import { feedPlugin } from '@11ty/eleventy-plugin-rss';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const loadJSON = (relPath) => JSON.parse(fs.readFileSync(path.join(__dirname, relPath), 'utf-8'));
@@ -12,6 +13,31 @@ const I18N = {
     es: loadJSON('./src/_data/i18n/es.json'),
 };
 const getByPath = (obj, dotPath) => dotPath.split('.').reduce((acc, k) => (acc && acc[k] !== undefined) ? acc[k] : undefined, obj);
+
+// Vite plugin: emits Eleventy-generated XML feeds as Rollup assets so they
+// survive the temp-dir rename+delete that eleventy-plugin-vite performs.
+// Uses Rollup's emitFile API — no extra dependencies, no fs/promises.
+function copyFeedsPlugin(feedPaths) {
+    let viteRoot;
+    return {
+        name: 'copy-feeds',
+        configResolved(config) {
+            viteRoot = config.root;
+        },
+        generateBundle() {
+            for (const feedPath of feedPaths) {
+                const src = path.join(viteRoot, feedPath);
+                if (fs.existsSync(src)) {
+                    this.emitFile({
+                        type: 'asset',
+                        fileName: feedPath.replace(/^\//, ''),
+                        source: fs.readFileSync(src, 'utf-8'),
+                    });
+                }
+            }
+        },
+    };
+}
 
 const CATEGORY_ALIASES = {
     app: 'app',
@@ -43,6 +69,15 @@ export default function (eleventyConfig) {
                 eleventyConfig.addCollection(name, (collection) => collection.getFilteredByGlob(glob));
             });
         });
+    });
+
+    const feedCategories = ['poetry', 'tale'];
+    locales.forEach(locale => {
+        eleventyConfig.addCollection(`${locale}_items_feed`, (collection) =>
+            feedCategories
+                .flatMap(cat => collection.getFilteredByGlob(`./src/${locale}/items/${cat}/**/index.md`))
+                .sort((a, b) => b.date - a.date)
+        );
     });
 
     eleventyConfig.addFilter('asPostDate', (dateObj, locale) =>
@@ -186,7 +221,47 @@ export default function (eleventyConfig) {
         return CATEGORY_ALIASES[raw] ?? raw;
     });
 
-    eleventyConfig.addPlugin(EleventyVitePlugin);
+    eleventyConfig.addPlugin(feedPlugin, {
+        type: 'atom',
+        outputPath: '/en/feed.xml',
+        collection: {
+            name: 'en_items_feed',
+            limit: 20,
+        },
+        metadata: {
+            language: 'en',
+            title: 'Site of Alberto Ferrero',
+            subtitle: 'Tales and poetry.',
+            base: 'https://albertoferrero.com/',
+            author: {
+                name: 'Alberto Ferrero',
+            },
+        },
+    });
+
+    eleventyConfig.addPlugin(feedPlugin, {
+        type: 'atom',
+        outputPath: '/es/feed.xml',
+        collection: {
+            name: 'es_items_feed',
+            limit: 20,
+        },
+        metadata: {
+            language: 'es',
+            title: 'Sitio de Alberto Ferrero',
+            subtitle: 'Cuentos y poesía.',
+            base: 'https://albertoferrero.com/',
+            author: {
+                name: 'Alberto Ferrero',
+            },
+        },
+    });
+
+    eleventyConfig.addPlugin(EleventyVitePlugin, {
+        viteOptions: {
+            plugins: [copyFeedsPlugin(['/en/feed.xml', '/es/feed.xml'])],
+        },
+    });
 
     return {
         dir: {
