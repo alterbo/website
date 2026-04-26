@@ -22,11 +22,11 @@
   "devDependencies": {
     "cssnano": "^7.1.4",
     "luxon": "^3.7.2",
-    "postcss": "^8.5.8",
+    "postcss": "^8.5.10",
     "tailwindcss": "^4.2.2"
   },
   "overrides": {
-    "liquidjs": ">=10.25.5",
+    "liquidjs": ">=10.25.7",
     "vite": ">=7.3.2"
   }
 }
