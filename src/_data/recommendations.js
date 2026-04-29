@@ -14,12 +14,14 @@ export default {
     ],
     poetry: [
       'mute',
-      'cat-on-a-hot-tin-keyboard'
+      'cat-on-a-hot-tin-keyboard',
+      'the-four-scooters'
     ],
     tale: [
       'grunge-mustache',
       'friday-deployment',
       'pair-programming-with-scott-joplin',
+      'the-developers-neck',
       'the-red-hooded-lady'
     ],
   },
@@ -38,10 +40,12 @@ export default {
     ],
     poetry: [
       'mute',
-      'la-gata-sobre-el-teclado-de-zinc'
+      'la-gata-sobre-el-teclado-de-zinc',
+      'los-cuatro-patinetes'
     ],
     tale: [
       'bigote-grunge',
+      'el-cuello-del-desarrollador',
       'el-despliegue-del-viernes',
       'pair-programming-with-scott-joplin',
       'la-chica-de-la-capucha-roja'

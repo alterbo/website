@@ -40,5 +40,5 @@ Era una situación insostenible.
 Decidí que no quiero cruzar el mar, concluye el desarrollador, nací en el campo, sabes?
 
 
-Y pasó que el desarrollador heredó unas tierras. Y viaje al campo, y allí, lejos del monitor girado, comenzó a programar drones y automatizar tareas en el cultivo de secano. Junto a su esposa recorrían los campos en bicicleta, y solamente giraban el cuello para darse unos besos, y disfrutaban de las flores en primavera y de las piedras en invierno.
+Y pasó que el desarrollador heredó unas tierras. Y viajó al campo, y allí, lejos del monitor girado, comenzó a programar drones y automatizar tareas en el cultivo de secano. Junto a su esposa recorrían los campos en bicicleta, y solamente giraban el cuello para darse unos besos, y disfrutaban de las flores en primavera y de las piedras en invierno.
 
