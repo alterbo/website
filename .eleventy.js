@@ -27,13 +27,14 @@ function copyFeedsPlugin(feedPaths) {
         generateBundle() {
             for (const feedPath of feedPaths) {
                 const src = path.join(viteRoot, feedPath);
-                if (fs.existsSync(src)) {
-                    this.emitFile({
-                        type: 'asset',
-                        fileName: feedPath.replace(/^\//, ''),
-                        source: fs.readFileSync(src, 'utf-8'),
-                    });
+                if (!fs.existsSync(src)) {
+                    this.error(`Feed file not found: ${src}`);
                 }
+                this.emitFile({
+                    type: 'asset',
+                    fileName: feedPath.replace(/^\//, ''),
+                    source: fs.readFileSync(src, 'utf-8'),
+                });
             }
         },
     };
@@ -226,7 +227,6 @@ export default function (eleventyConfig) {
         outputPath: '/en/feed.xml',
         collection: {
             name: 'en_items_feed',
-            limit: 20,
         },
         metadata: {
             language: 'en',
@@ -244,7 +244,6 @@ export default function (eleventyConfig) {
         outputPath: '/es/feed.xml',
         collection: {
             name: 'es_items_feed',
-            limit: 20,
         },
         metadata: {
             language: 'es',
