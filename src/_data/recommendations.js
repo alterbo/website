@@ -18,6 +18,7 @@ export default {
       'the-four-scooters'
     ],
     tale: [
+      'customer-service',
       'grunge-mustache',
       'friday-deployment',
       'pair-programming-with-scott-joplin',
@@ -44,6 +45,7 @@ export default {
       'los-cuatro-patinetes'
     ],
     tale: [
+      'atencion-al-cliente',
       'bigote-grunge',
       'el-cuello-del-desarrollador',
       'el-despliegue-del-viernes',

@@ -66,7 +66,7 @@
 {% endmacro %}
 
 {% macro itemCard(item, locale) %}
-<article class="grid gap-3 grid-rows-[auto_1fr_1fr] w-full" aria-labelledby="heading-{{ item.data.title | slug }}">
+<article class="grid gap-3 grid-rows-[auto_1fr_auto] w-full xs:grid-rows-[auto_1fr_1fr]" aria-labelledby="heading-{{ item.data.title | slug }}">
     <div class="px-7 xs:px-12">
         <date-range data-date="{{ item.date }}" data-locale="{{ locale }}" data-title="{{ item.data.title }}"></date-range>
     </div>
@@ -83,7 +83,7 @@
         </svg>
     </div>
     <div class="mb-10 px-7 xs:px-12">
-        <h3 id="heading-{{ item.data.title | slug }}" class="mb-3 text-2xl xs:text-3xl">
+        <h3 id="heading-{{ item.data.title | slug }}" class="text-2xl xs:text-3xl">
             <a href="{% if item.data.category === 'App' %}{{ item.data.url }}{% else %}{{ item.url }}{% endif %}" {% if item.data.category === 'App' %}target="_blank" rel="noopener noreferrer"{% endif %}>
                 {{ item.data.title }}
                 {% if item.data.category === 'App' %}
@@ -91,7 +91,7 @@
                 {% endif %}
             </a>
         </h3>
-        {% if item.data.description %}<p class="text-slate-700 dark:text-slate-200">{{ item.data.description }}</p>{% endif %}
+        {% if item.data.description %}<p class="mt-3 text-slate-700 dark:text-slate-200">{{ item.data.description }}</p>{% endif %}
     </div>
 </article>
 {% endmacro %}
