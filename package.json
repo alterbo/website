@@ -12,17 +12,18 @@
   "author": "alberto ferrero",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-plugin-rss": "^3.0.0",
-    "@11ty/eleventy-plugin-vite": "^7.0.0",
-    "@tailwindcss/postcss": "^4.2.2",
-    "gsap": "^3.14.2",
-    "sanitize-html": "^2.17.4"
+    "@11ty/eleventy-plugin-vite": "^8.0.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "gsap": "^3.15.0",
+    "sanitize-html": "^2.17.6"
   },
   "devDependencies": {
-    "cssnano": "^7.1.4",
+    "cssnano": "^8.0.2",
     "luxon": "^3.7.2",
-    "postcss": "^8.5.10",
-    "tailwindcss": "^4.2.2"
-  }
+    "postcss": "^8.5.23",
+    "tailwindcss": "^4.3.3"
+  },
+  "packageManager": "pnpm@11.17.0+sha512.cca3cea332ad254bb84145f966d19f4879615210346fc92c79a047f23a0d7b3cca3c3792f0076ba1f1831d277efbcf0a9119b31a9a60eca7fb3d6231f331ef72"
 }
